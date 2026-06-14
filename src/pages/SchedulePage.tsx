@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import ScheduleList, { type ScheduleListRef } from '../features/schedule/ScheduleList';
+import ScheduleFormModal from '../features/schedule/ScheduleFormModal';
 import type { Schedule } from '../features/schedule/types';
 
 export default function SchedulePage() {
@@ -17,6 +18,9 @@ export default function SchedulePage() {
     setShowModal(true);
   };
 
+  const handleClose = () => setShowModal(false);
+  const handleSaved = () => listRef.current?.refresh();
+
   return (
     <div className="page">
       <div className="page-header">
@@ -28,19 +32,11 @@ export default function SchedulePage() {
         onEdit={handleEdit}
       />
       {showModal && (
-        <div className="modal-backdrop" onClick={() => setShowModal(false)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h3 className="modal-title">
-                {editTarget ? '일정 수정' : '일정 추가'}
-              </h3>
-              <button className="modal-close" onClick={() => setShowModal(false)}>✕</button>
-            </div>
-            <div className="modal-body">
-              <p className="state-message">일정 추가/수정 폼은 Task 2-4에서 구현됩니다.</p>
-            </div>
-          </div>
-        </div>
+        <ScheduleFormModal
+          schedule={editTarget ?? undefined}
+          onClose={handleClose}
+          onSaved={handleSaved}
+        />
       )}
     </div>
   );
