@@ -298,7 +298,7 @@ CREATE TABLE schema_migrations (
 ### 파일 명명 규칙
 
 ```
-src-tauri/src/db/migrations/
+src-tauri/migrations/
 ├── V001_initial_schema.sql
 ├── V001_initial_schema.rollback.sql
 ├── V002_xxx.sql
@@ -306,29 +306,47 @@ src-tauri/src/db/migrations/
 └── ...
 ```
 
+SQL 파일은 `include_str!()` 매크로로 컴파일 타임에 바이너리에 임베딩된다.
+런타임 파일 스캔 없음 — 새 Migration 추가 시 `MIGRATIONS` 배열에 수동 등록 필수.
+
 ### 적용 방식
 
-앱 시작 시 자동으로 `schema_migrations` 테이블을 확인하여
-미적용 Migration을 버전 순서대로 실행한다.
+앱 시작 시 `MigrationRunner::run()` 이 자동으로 실행된다.
 
 ```
 앱 시작
   │
   ▼
-schema_migrations 테이블 존재 여부 확인 (없으면 생성)
+ensure_migrations_table()
+  CREATE TABLE IF NOT EXISTS schema_migrations (...)
+  ※ Migration 트랜잭션 외부에서 생성
+    — 실패 후 재시작 시 이력 보존을 위해
   │
   ▼
-migrations/ 폴더에서 V*.sql 파일 목록 로드
+get_max_applied_version()
+  SELECT COALESCE(MAX(version), 0) FROM schema_migrations
+  ※ MAX(version) 채택 이유:
+    단일 사용자 앱 / 이 코드만 schema_migrations에 삽입
+    → 버전 갭 발생 불가 → 단순성 우선
   │
   ▼
-applied_versions = SELECT version FROM schema_migrations
-  │
-  ▼
-미적용 버전을 오름차순으로 트랜잭션 단위 실행
-  │
-  ▼
-각 실행 후 schema_migrations에 기록
+MIGRATIONS.iter().filter(|m| m.version > max_version)
+  각 Migration을 독립 트랜잭션으로 실행:
+    tx = conn.transaction()
+    tx.execute_batch(migration.up)  ← 실패 시 tx drop → 자동 rollback
+    tx.execute(INSERT INTO schema_migrations ...)
+    tx.commit()
 ```
+
+### 버전 관리 설계 결정 — MAX(version) vs SET 방식
+
+| 방식 | 쿼리 | 갭 감지 | 코드 복잡도 |
+|------|------|---------|------------|
+| `MAX(version)` | 스칼라 1건 | 불가 | 낮음 |
+| `SELECT version` (set) | N건 | 가능 | 중간 |
+
+**MAX(version) 채택** — 단일 사용자 / 단일 코드베이스 환경에서 버전 갭은 이론적 위험.
+갭이 실제로 문제가 될 경우(다중 배포 환경 등) SET 방식으로 교체.
 
 ### Migration 작성 원칙
 

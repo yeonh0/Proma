@@ -75,11 +75,15 @@ claudeProj/
 │   └── vite-env.d.ts
 │
 ├── src-tauri/                      # Rust 백엔드
-│   ├── migrations/                 # SQL 마이그레이션 파일
-│   │   └── (V001_initial_schema.sql 예정)
+│   ├── migrations/                 # SQL 마이그레이션 파일 (include_str! 임베딩)
+│   │   ├── V001_initial_schema.sql
+│   │   └── V001_initial_schema.rollback.sql
 │   ├── src/
 │   │   ├── main.rs                 # 진입점
-│   │   ├── lib.rs                  # 모듈 선언, Tauri 빌더
+│   │   ├── lib.rs                  # 모듈 선언, Tauri 빌더, AppState
+│   │   ├── db/                     # DB 초기화 및 Migration 엔진
+│   │   │   ├── mod.rs              # DatabaseManager, DbError
+│   │   │   └── migration.rs        # Migration struct, MIGRATIONS 배열, MigrationRunner
 │   │   ├── commands/               # Tauri IPC 커맨드
 │   │   │   ├── mod.rs
 │   │   │   ├── project.rs
@@ -197,6 +201,39 @@ Frontend: 후보 프로젝트 목록 표시 (신뢰도 포함)
 
 모든 AI 결과는 `is_applied = false`, 프로젝트 매핑 후보는 `is_confirmed = 0`으로 먼저 저장하고,
 사용자가 명시적으로 확인한 후에만 반영한다. 자동 적용 금지.
+
+---
+
+## DB 초기화 흐름
+
+앱 시작 시 `tauri::Builder::setup()` 콜백에서 DB 초기화가 이루어진다.
+
+```
+앱 시작
+  │
+  ▼
+app.path().app_data_dir()
+  → %APPDATA%\com.claudeproj.app\  (개발/배포 공통)
+  │
+  ▼
+DatabaseManager::new("data.db")
+  ├─ create_dir_all(parent) — 디렉토리 없으면 자동 생성
+  ├─ Connection::open(path)  — data.db 파일 없으면 자동 생성
+  └─ PRAGMA foreign_keys=ON / journal_mode=WAL / synchronous=NORMAL
+  │
+  ▼
+MigrationRunner::run(&mut conn)
+  ├─ schema_migrations 테이블 생성 (CREATE TABLE IF NOT EXISTS)
+  ├─ SELECT COALESCE(MAX(version), 0) FROM schema_migrations
+  └─ 미적용 Migration을 버전 오름차순으로 각각 독립 트랜잭션 실행
+       실패 시 tx drop → 자동 rollback → schema_migrations 기록 없음
+  │
+  ▼
+app.manage(AppState { db: Mutex<DatabaseManager> })
+```
+
+Migration SQL은 `include_str!()` 매크로로 컴파일 타임에 바이너리에 임베딩된다.
+런타임 파일 탐색 없음 — 배포 환경에서 파일 경로 의존성 없음.
 
 ---
 
