@@ -35,7 +35,7 @@
 
 | Task | 내용 | 예상 소요 | 상태 |
 |------|------|----------|------|
-| 1-1 | project_create / project_list IPC 커맨드 | 반나절 | ⬜ |
+| 1-1 | project_create / project_list IPC 커맨드 | 반나절 | ✅ 완료 |
 | 1-2 | project_get / project_update / project_delete | 반나절 | ⬜ |
 | 1-3 | 프로젝트 목록 화면 (ProjectList) | 반나절 | ⬜ |
 | 1-4 | 프로젝트 생성/수정 모달 | 반나절 | ⬜ |
@@ -161,7 +161,7 @@
 
 ```
 Phase 0: ✅ 완료
-Phase 1: 🔵 진행 예정
+Phase 1: 🔵 진행 중
 Phase 1: ⬜ 대기
 Phase 2: ⬜ 대기
 Phase 3: ⬜ 대기

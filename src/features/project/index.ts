@@ -1,1 +1,2 @@
-// TODO: Phase 1 — 프로젝트 기능 export
+export type { Project, CreateProjectRequest } from './types';
+export { projectApi } from './api';
