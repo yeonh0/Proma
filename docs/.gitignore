@@ -1,0 +1,25 @@
+# Node
+node_modules/
+dist/
+
+# Tauri
+src-tauri/target/
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Claude
+.claude/local/
