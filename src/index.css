@@ -654,6 +654,164 @@ body {
   flex-shrink: 0;
 }
 
+/* ─── 이메일 목록 ─────────────────────────── */
+
+.email-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.email-item {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.email-item:hover {
+  border-color: #4f6ef7;
+  box-shadow: 0 1px 6px rgba(79, 110, 247, 0.12);
+}
+
+.email-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.email-sender {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+}
+
+.email-date {
+  font-size: 11px;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.email-subject {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.email-preview {
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── 이메일 상세 ─────────────────────────── */
+
+.email-detail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.email-detail-subject {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.email-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: #888;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.email-meta-row strong {
+  color: #555;
+}
+
+.email-body {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.email-attachments {
+  margin-top: 16px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+
+.email-attachments-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.email-attachment-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #555;
+  padding: 4px 0;
+}
+
+.email-project-links {
+  margin-top: 16px;
+}
+
+.email-project-links-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.email-project-link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: #f6f7f9;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.email-project-unlink-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.email-project-unlink-btn:hover {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
 /* ─── 캘린더 ──────────────────────────────── */
 
 .calendar-nav {

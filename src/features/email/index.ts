@@ -1,1 +1,4 @@
-// TODO: Phase 3 — 이메일 기능 export
+export * from './types';
+export { emailApi } from './api';
+export { default as EmailList } from './EmailList';
+export type { EmailListRef } from './EmailList';
