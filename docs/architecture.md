@@ -50,42 +50,36 @@
 ```
 claudeProj/
 ├── src/                            # React 프론트엔드
-│   ├── components/
-│   │   ├── common/                 # 공통 UI 컴포넌트
-│   │   │   ├── Button.tsx
-│   │   │   ├── Modal.tsx
-│   │   │   ├── Table.tsx
-│   │   │   └── StatusBadge.tsx
-│   │   ├── layout/
-│   │   │   ├── Sidebar.tsx
-│   │   │   └── MainLayout.tsx
+│   ├── features/                   # 도메인별 기능 모듈
 │   │   ├── project/
-│   │   ├── schedule/
+│   │   │   ├── components/         # 프로젝트 UI 컴포넌트
+│   │   │   └── index.ts
 │   │   ├── email/
+│   │   │   ├── components/
+│   │   │   └── index.ts
+│   │   ├── schedule/
+│   │   │   ├── components/
+│   │   │   └── index.ts
 │   │   └── ai/
-│   ├── pages/
-│   │   ├── Dashboard.tsx
-│   │   ├── ProjectList.tsx
-│   │   ├── ProjectDetail.tsx
-│   │   ├── SchedulePage.tsx
-│   │   ├── EmailList.tsx
-│   │   ├── EmailDetail.tsx
-│   │   └── Settings.tsx
-│   ├── hooks/                      # 커스텀 훅
-│   ├── store/                      # Zustand 스토어
-│   │   ├── projectStore.ts
-│   │   ├── emailStore.ts
-│   │   └── settingsStore.ts
-│   ├── types/                      # TypeScript 타입 정의
-│   │   ├── project.ts
-│   │   ├── email.ts
-│   │   └── ai.ts
-│   ├── utils/
-│   └── App.tsx
+│   │       ├── components/
+│   │       └── index.ts
+│   ├── shared/                     # 공유 리소스
+│   │   ├── components/             # 공통 UI 컴포넌트
+│   │   ├── hooks/                  # 공통 커스텀 훅
+│   │   ├── lib/
+│   │   │   └── tauri.ts            # IPC invoke 래퍼
+│   │   └── types/
+│   │       └── index.ts            # 공통 타입 (Status, Priority 등)
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── vite-env.d.ts
 │
 ├── src-tauri/                      # Rust 백엔드
+│   ├── migrations/                 # SQL 마이그레이션 파일
+│   │   └── (V001_initial_schema.sql 예정)
 │   ├── src/
-│   │   ├── main.rs                 # 진입점, Tauri 빌더
+│   │   ├── main.rs                 # 진입점
+│   │   ├── lib.rs                  # 모듈 선언, Tauri 빌더
 │   │   ├── commands/               # Tauri IPC 커맨드
 │   │   │   ├── mod.rs
 │   │   │   ├── project.rs
@@ -93,24 +87,20 @@ claudeProj/
 │   │   │   ├── schedule.rs
 │   │   │   ├── email.rs
 │   │   │   └── ai.rs
-│   │   ├── models/                 # 도메인 모델 (struct)
+│   │   ├── models/                 # 도메인 모델 (struct + serde)
 │   │   │   ├── mod.rs
 │   │   │   ├── project.rs
 │   │   │   ├── email.rs
 │   │   │   └── ai_result.rs
-│   │   ├── repository/             # DB 접근 계층
+│   │   ├── repository/             # DB 접근 계층 (rusqlite)
 │   │   │   ├── mod.rs
-│   │   │   ├── project_repo.rs
-│   │   │   ├── email_repo.rs
-│   │   │   └── ai_result_repo.rs
-│   │   ├── services/               # 비즈니스 로직
-│   │   │   ├── email_parser.rs     # .eml 파싱
-│   │   │   └── ollama_client.rs    # Ollama HTTP 클라이언트
-│   │   └── db/
-│   │       ├── mod.rs              # DB 초기화, 커넥션 관리
-│   │       └── migrations/         # SQL 마이그레이션 파일
-│   │           ├── V001_initial_schema.sql
-│   │           └── V001_initial_schema.rollback.sql
+│   │   │   ├── project.rs
+│   │   │   ├── email.rs
+│   │   │   └── ai_result.rs
+│   │   └── services/               # 비즈니스 로직
+│   │       ├── mod.rs
+│   │       ├── email_parser.rs     # .eml 파싱
+│   │       └── ollama_client.rs    # Ollama HTTP 클라이언트
 │   ├── Cargo.toml
 │   └── tauri.conf.json
 │
@@ -122,7 +112,9 @@ claudeProj/
 │   └── tasks/
 │       └── completed/
 │
+├── index.html
 ├── package.json
+├── tsconfig.json
 └── vite.config.ts
 ```
 
