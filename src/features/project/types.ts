@@ -1,5 +1,7 @@
 import type { Status, Priority } from '../../shared/types';
 
+export type { Status, Priority };
+
 export interface Project {
   id: number;
   parent_id: number | null;

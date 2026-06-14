@@ -37,8 +37,8 @@
 |------|------|----------|------|
 | 1-1 | project_create / project_list IPC 커맨드 | 반나절 | ✅ 완료 |
 | 1-2 | project_get / project_update / project_delete | 반나절 | ✅ 완료 |
-| 1-3 | 프로젝트 목록 화면 (ProjectList) | 반나절 | ⬜ |
-| 1-4 | 프로젝트 생성/수정 모달 | 반나절 | ⬜ |
+| 1-3 | 프로젝트 목록 화면 (ProjectList) | 반나절 | ✅ 완료 |
+| 1-4 | 프로젝트 생성/수정 모달 | 반나절 | ✅ 완료 |
 | 1-5 | 프로젝트 상세 화면 (개요 탭) | 반나절 | ⬜ |
 | 1-6 | task_create / task_list / task_update / task_delete | 반나절 | ⬜ |
 | 1-7 | Task 목록 탭 (리스트 뷰) | 반나절 | ⬜ |
