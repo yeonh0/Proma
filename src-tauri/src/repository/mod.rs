@@ -2,5 +2,6 @@
 // TODO: Phase 1+ — 각 도메인 Repository 구현
 
 pub mod project;
+pub mod task;
 pub mod email;
 pub mod ai_result;

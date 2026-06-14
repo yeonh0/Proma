@@ -39,10 +39,10 @@
 | 1-2 | project_get / project_update / project_delete | 반나절 | ✅ 완료 |
 | 1-3 | 프로젝트 목록 화면 (ProjectList) | 반나절 | ✅ 완료 |
 | 1-4 | 프로젝트 생성/수정 모달 | 반나절 | ✅ 완료 |
-| 1-5 | 프로젝트 상세 화면 (개요 탭) | 반나절 | ⬜ |
-| 1-6 | task_create / task_list / task_update / task_delete | 반나절 | ⬜ |
-| 1-7 | Task 목록 탭 (리스트 뷰) | 반나절 | ⬜ |
-| 1-8 | 프로젝트 상태 변경 (active→completed 등) | 반나절 | ⬜ |
+| 1-5 | 프로젝트 상세 화면 (개요 탭) | 반나절 | ✅ 완료 |
+| 1-6 | task_create / task_list / task_update / task_delete | 반나절 | ✅ 완료 |
+| 1-7 | Task 목록 탭 (리스트 뷰) | 반나절 | ✅ 완료 |
+| 1-8 | 프로젝트 상태 변경 (active→completed 등) | 반나절 | ✅ 완료 |
 
 **완료 조건**:
 - 프로젝트 생성 / 수정 / 삭제 동작
@@ -161,7 +161,7 @@
 
 ```
 Phase 0: ✅ 완료
-Phase 1: 🔵 진행 중
+Phase 1: ✅ 완료
 Phase 1: ⬜ 대기
 Phase 2: ⬜ 대기
 Phase 3: ⬜ 대기

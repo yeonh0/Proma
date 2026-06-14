@@ -383,6 +383,190 @@ body {
   gap: 12px;
 }
 
+/* ─── 상세 카드 ───────────────────────────── */
+
+.detail-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+
+.detail-desc {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #999;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+/* ─── 탭 ──────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 2px solid #e8e8e8;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.12s;
+}
+
+.tab-btn:hover { color: #333; }
+.tab-btn.active { color: #4f6ef7; border-bottom-color: #4f6ef7; }
+
+/* ─── Task 목록 ───────────────────────────── */
+
+.task-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.task-count {
+  font-size: 13px;
+  color: #888;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 7px;
+  padding: 10px 12px;
+  transition: border-color 0.12s;
+}
+
+.task-item--done {
+  opacity: 0.6;
+}
+
+.task-item:hover {
+  border-color: #ccc;
+}
+
+.task-status-btn {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: none;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.task-status-btn--todo { border-color: #ccc; color: #ccc; }
+.task-status-btn--todo:hover { border-color: #4f6ef7; color: #4f6ef7; }
+.task-status-btn--in_progress { border-color: #f59e0b; color: #f59e0b; background: #fffbeb; }
+.task-status-btn--done { border-color: #16a34a; color: #16a34a; background: #f0fdf4; }
+
+.task-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #111;
+}
+
+.task-item--done .task-title {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-desc {
+  font-size: 12px;
+  color: #777;
+  margin-top: 3px;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.task-due {
+  font-size: 11px;
+  color: #999;
+}
+
+.task-delete-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #ccc;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.12s, color 0.12s;
+}
+
+.task-item:hover .task-delete-btn {
+  opacity: 1;
+}
+
+.task-delete-btn:hover {
+  color: #dc2626;
+}
+
 .form-error {
   font-size: 12px;
   color: #dc2626;
