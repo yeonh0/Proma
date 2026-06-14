@@ -3,3 +3,4 @@ export { scheduleApi } from './api';
 export { default as ScheduleList } from './ScheduleList';
 export type { ScheduleListRef } from './ScheduleList';
 export { default as ScheduleFormModal } from './ScheduleFormModal';
+export { default as ScheduleCalendar } from './ScheduleCalendar';

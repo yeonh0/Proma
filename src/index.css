@@ -653,3 +653,125 @@ body {
   gap: 6px;
   flex-shrink: 0;
 }
+
+/* ─── 캘린더 ──────────────────────────────── */
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.calendar-nav-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  min-width: 120px;
+  text-align: center;
+}
+
+.calendar {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-grid--header {
+  background: #f6f7f9;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.calendar-dow {
+  padding: 8px 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+}
+
+.calendar-cell {
+  min-height: 90px;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 6px;
+  vertical-align: top;
+}
+
+.calendar-cell:nth-child(7n) {
+  border-right: none;
+}
+
+.calendar-cell--empty {
+  background: #fafafa;
+}
+
+.calendar-cell--today {
+  background: #f0f4ff;
+}
+
+.calendar-cell--clickable {
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.calendar-cell--clickable:hover {
+  background: #f6f7f9;
+}
+
+.calendar-cell--today.calendar-cell--clickable:hover {
+  background: #e6edff;
+}
+
+.calendar-day-num {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.calendar-cell--today .calendar-day-num {
+  background: #4f6ef7;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.calendar-events {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.calendar-event {
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: #e6edff;
+  color: #3a58e0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendar-event--recurring {
+  background: #e6f9f0;
+  color: #15803d;
+}
+
+.calendar-event--more {
+  background: #f0f0f0;
+  color: #888;
+}
