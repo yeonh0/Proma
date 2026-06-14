@@ -4,11 +4,13 @@ mod models;
 mod repository;
 mod services;
 
+use std::path::PathBuf;
 use std::sync::Mutex;
 use tauri::Manager;
 
 pub struct AppState {
     pub db: Mutex<db::DatabaseManager>,
+    pub app_data_dir: PathBuf,
 }
 
 #[tauri::command]
@@ -20,17 +22,17 @@ fn greet(name: &str) -> String {
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
+        .plugin(tauri_plugin_dialog::init())
         .setup(|app| {
-            let db_path = app
-                .path()
-                .app_data_dir()?
-                .join("data.db");
+            let app_data_dir = app.path().app_data_dir()?;
+            let db_path = app_data_dir.join("data.db");
 
             let mut db = db::DatabaseManager::new(&db_path)?;
             db.run_migrations()?;
 
             app.manage(AppState {
                 db: Mutex::new(db),
+                app_data_dir,
             });
 
             Ok(())
@@ -52,6 +54,13 @@ pub fn run() {
             commands::schedule::schedule_get,
             commands::schedule::schedule_update,
             commands::schedule::schedule_delete,
+            commands::email::email_import,
+            commands::email::email_list,
+            commands::email::email_get,
+            commands::email::email_delete,
+            commands::email::email_link_project,
+            commands::email::email_unlink_project,
+            commands::email::email_list_project_ids,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
