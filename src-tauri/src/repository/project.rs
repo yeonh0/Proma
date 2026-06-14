@@ -1,6 +1,6 @@
 use rusqlite::{params, Connection};
 
-use crate::models::project::{CreateProjectRequest, Project};
+use crate::models::project::{CreateProjectRequest, Project, UpdateProjectRequest};
 
 const SELECT_COLS: &str =
     "id, parent_id, title, description, status, priority, start_date, due_date, completed_at, created_at, updated_at";
@@ -40,7 +40,7 @@ pub fn create(conn: &Connection, req: &CreateProjectRequest) -> rusqlite::Result
     )?;
 
     let id = conn.last_insert_rowid();
-    find_by_id(conn, id)?.ok_or(rusqlite::Error::QueryReturnedNoRows)
+    get(conn, id)?.ok_or(rusqlite::Error::QueryReturnedNoRows)
 }
 
 pub fn list(conn: &Connection) -> rusqlite::Result<Vec<Project>> {
@@ -52,11 +52,47 @@ pub fn list(conn: &Connection) -> rusqlite::Result<Vec<Project>> {
     rows.collect()
 }
 
-fn find_by_id(conn: &Connection, id: i64) -> rusqlite::Result<Option<Project>> {
-    let sql = format!(
-        "SELECT {SELECT_COLS} FROM projects WHERE id = ?1"
-    );
+pub fn get(conn: &Connection, id: i64) -> rusqlite::Result<Option<Project>> {
+    let sql = format!("SELECT {SELECT_COLS} FROM projects WHERE id = ?1");
     let mut stmt = conn.prepare(&sql)?;
     let mut rows = stmt.query_map([id], map_row)?;
     rows.next().transpose()
 }
+
+pub fn update(conn: &Connection, id: i64, req: &UpdateProjectRequest) -> rusqlite::Result<Project> {
+    let affected = conn.execute(
+        "UPDATE projects SET
+             parent_id    = ?1,
+             title        = ?2,
+             description  = ?3,
+             status       = ?4,
+             priority     = ?5,
+             start_date   = ?6,
+             due_date     = ?7,
+             completed_at = ?8,
+             updated_at   = datetime('now', 'localtime')
+         WHERE id = ?9",
+        params![
+            req.parent_id,
+            req.title,
+            req.description,
+            req.status,
+            req.priority,
+            req.start_date,
+            req.due_date,
+            req.completed_at,
+            id,
+        ],
+    )?;
+
+    if affected == 0 {
+        return Err(rusqlite::Error::QueryReturnedNoRows);
+    }
+    get(conn, id)?.ok_or(rusqlite::Error::QueryReturnedNoRows)
+}
+
+pub fn delete(conn: &Connection, id: i64) -> rusqlite::Result<bool> {
+    let affected = conn.execute("DELETE FROM projects WHERE id = ?1", [id])?;
+    Ok(affected > 0)
+}
+

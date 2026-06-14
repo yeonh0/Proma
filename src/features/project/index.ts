@@ -1,2 +1,2 @@
-export type { Project, CreateProjectRequest } from './types';
+export type { Project, CreateProjectRequest, UpdateProjectRequest } from './types';
 export { projectApi } from './api';

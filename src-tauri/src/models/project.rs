@@ -25,3 +25,15 @@ pub struct CreateProjectRequest {
     pub start_date: Option<String>,
     pub due_date: Option<String>,
 }
+
+#[derive(Debug, Deserialize)]
+pub struct UpdateProjectRequest {
+    pub parent_id: Option<i64>,
+    pub title: String,
+    pub description: Option<String>,
+    pub status: String,
+    pub priority: String,
+    pub start_date: Option<String>,
+    pub due_date: Option<String>,
+    pub completed_at: Option<String>,
+}
