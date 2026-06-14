@@ -57,7 +57,7 @@
 
 | Task | 내용 | 예상 소요 | 상태 |
 |------|------|----------|------|
-| 2-1 | schedule_create / schedule_list IPC 커맨드 | 반나절 | ⬜ |
+| 2-1 | schedule_create / schedule_list IPC 커맨드 | 반나절 | ✅ 완료 |
 | 2-2 | schedule_update / schedule_delete | 반나절 | ⬜ |
 | 2-3 | 일정 목록 뷰 (SchedulePage) | 반나절 | ⬜ |
 | 2-4 | 일정 생성/수정 모달 (프로젝트 연결 포함) | 반나절 | ⬜ |

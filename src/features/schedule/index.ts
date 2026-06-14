@@ -1,1 +1,2 @@
-// TODO: Phase 2 — 일정 기능 export
+export * from './types';
+export { scheduleApi } from './api';
