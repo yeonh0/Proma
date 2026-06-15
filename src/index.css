@@ -999,6 +999,151 @@ body {
   color: #888;
 }
 
+/* ─── 대시보드 ────────────────────────────── */
+
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #4f6ef7;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.stat-sub {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.dash-section {
+  margin-bottom: 28px;
+}
+
+.dash-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.dash-empty {
+  font-size: 13px;
+  color: #bbb;
+  padding: 8px 0;
+}
+
+.dash-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dash-item {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash-item--clickable {
+  cursor: pointer;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.dash-item--clickable:hover {
+  border-color: #4f6ef7;
+  box-shadow: 0 1px 6px rgba(79, 110, 247, 0.1);
+}
+
+.dash-item--email {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.dash-item-time {
+  font-size: 12px;
+  color: #4f6ef7;
+  font-weight: 500;
+  flex-shrink: 0;
+  min-width: 150px;
+}
+
+.dash-item-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #111;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash-item-due {
+  font-size: 11px;
+  color: #aaa;
+  flex-shrink: 0;
+}
+
+.dash-item-badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: #888;
+  background: #f0f0f0;
+  border-radius: 99px;
+  padding: 2px 8px;
+}
+
+.dash-email-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.dash-email-sender {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.dash-email-subject {
+  font-size: 13px;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ─── 설정 페이지 ─────────────────────────── */
 
 .settings-form {
