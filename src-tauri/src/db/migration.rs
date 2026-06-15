@@ -6,14 +6,24 @@ pub struct Migration {
     pub down: Option<&'static str>,
 }
 
-pub const MIGRATIONS: &[Migration] = &[Migration {
-    version: 1,
-    description: "initial_schema",
-    up: include_str!("../../migrations/V001_initial_schema.sql"),
-    down: Some(include_str!(
-        "../../migrations/V001_initial_schema.rollback.sql"
-    )),
-}];
+pub const MIGRATIONS: &[Migration] = &[
+    Migration {
+        version: 1,
+        description: "initial_schema",
+        up: include_str!("../../migrations/V001_initial_schema.sql"),
+        down: Some(include_str!(
+            "../../migrations/V001_initial_schema.rollback.sql"
+        )),
+    },
+    Migration {
+        version: 2,
+        description: "add_ai_settings",
+        up: include_str!("../../migrations/V002_add_ai_settings.sql"),
+        down: Some(include_str!(
+            "../../migrations/V002_add_ai_settings.rollback.sql"
+        )),
+    },
+];
 
 pub struct MigrationRunner;
 
