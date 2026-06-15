@@ -6,8 +6,8 @@ use crate::services::ai::{AiProviderFactory, LlmRequest};
 use crate::AppState;
 
 #[tauri::command]
-pub fn email_analyze(
-    state: State<AppState>,
+pub async fn email_analyze(
+    state: State<'_, AppState>,
     email_id: i64,
     analysis_type: String,
 ) -> Result<AiResult, String> {
@@ -27,56 +27,73 @@ pub fn email_analyze(
         _ => return Err(format!("알 수 없는 분석 유형: {analysis_type}")),
     };
 
+    // DB 조회 — MutexGuard를 await 이전에 drop
+    let (body, settings, model_name) = {
+        let db = state.db.lock().map_err(|e| e.to_string())?;
+        let conn = db.connection();
+
+        let email = email_repo::get(conn, email_id)
+            .map_err(|e| e.to_string())?
+            .ok_or_else(|| format!("이메일 #{email_id}을 찾을 수 없습니다"))?;
+
+        let body = email
+            .body_text
+            .filter(|s| !s.trim().is_empty())
+            .ok_or_else(|| "이메일 본문이 없어 AI 분석을 수행할 수 없습니다".to_string())?;
+
+        let settings = settings_repo::get_all(conn).map_err(|e| e.to_string())?;
+
+        let model_name = match settings.ai_provider.as_str() {
+            "internal" => "internal".to_string(),
+            _ => format!("ollama/{}", settings.ollama_model),
+        };
+
+        (body, settings, model_name)
+    }; // MutexGuard 여기서 drop
+
+    // AI HTTP 호출 — blocking reqwest를 spawn_blocking으로 격리
+    let system_prompt_owned = system_prompt.to_string();
+    let body_for_ai = body.clone();
+    let analysis_type_clone = analysis_type.clone();
+
+    let response_content = tokio::task::spawn_blocking(move || {
+        let provider = AiProviderFactory::from_settings(
+            &settings.ai_provider,
+            &settings.ollama_base_url,
+            &settings.ollama_model,
+            &settings.internal_api_url,
+        );
+
+        let llm_req = LlmRequest {
+            system_prompt: system_prompt_owned,
+            user_prompt: body_for_ai,
+            temperature: 0.7,
+        };
+
+        let result = match analysis_type_clone.as_str() {
+            "summary" => provider.summarize(llm_req),
+            "classification" => provider.classify(llm_req),
+            "draft_reply" => provider.draft_reply(llm_req),
+            _ => unreachable!(),
+        };
+
+        result.map(|r| r.content).map_err(|e| e.to_string())
+    })
+    .await
+    .map_err(|e| e.to_string())??;
+
+    // 결과 저장 — 새로 MutexGuard 획득
     let db = state.db.lock().map_err(|e| e.to_string())?;
-    let conn = db.connection();
-
-    let email = email_repo::get(conn, email_id)
-        .map_err(|e| e.to_string())?
-        .ok_or_else(|| format!("이메일 #{email_id}을 찾을 수 없습니다"))?;
-
-    let body = email
-        .body_text
-        .filter(|s| !s.trim().is_empty())
-        .ok_or_else(|| "이메일 본문이 없어 AI 분석을 수행할 수 없습니다".to_string())?;
-
-    let settings = settings_repo::get_all(conn).map_err(|e| e.to_string())?;
-
-    let model_name = match settings.ai_provider.as_str() {
-        "internal" => "internal".to_string(),
-        _ => format!("ollama/{}", settings.ollama_model),
-    };
-
-    let provider = AiProviderFactory::from_settings(
-        &settings.ai_provider,
-        &settings.ollama_base_url,
-        &settings.ollama_model,
-        &settings.internal_api_url,
-    );
-
-    let llm_req = LlmRequest {
-        system_prompt: system_prompt.to_string(),
-        user_prompt: body.clone(),
-        temperature: 0.7,
-    };
-
-    let response = match analysis_type.as_str() {
-        "summary" => provider.summarize(llm_req),
-        "classification" => provider.classify(llm_req),
-        "draft_reply" => provider.draft_reply(llm_req),
-        _ => unreachable!(),
-    }
-    .map_err(|e| e.to_string())?;
-
     let params = ai_repo::CreateAiResultParams {
         source_type: "email",
         source_id: email_id,
         result_type,
         model_name: &model_name,
         prompt: Some(&body),
-        result: &response.content,
+        result: &response_content,
     };
 
-    ai_repo::create(conn, &params).map_err(|e| e.to_string())
+    ai_repo::create(db.connection(), &params).map_err(|e| e.to_string())
 }
 
 #[tauri::command]
