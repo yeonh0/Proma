@@ -61,6 +61,9 @@ pub fn run() {
             commands::email::email_link_project,
             commands::email::email_unlink_project,
             commands::email::email_list_project_ids,
+            commands::settings::settings_get,
+            commands::settings::settings_set,
+            commands::settings::settings_get_all,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
