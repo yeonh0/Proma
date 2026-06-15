@@ -1,0 +1,18 @@
+From: 홍길동 <gildong.hong@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 데이터 분석 플랫폼 ETL 설계 완료
+Date: Sun, 27 Apr 2026 09:00:00 +0900
+Message-ID: <mail025@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+데이터 분석 플랫폼 ETL(추출/변환/적재) 파이프라인 설계가 완료되었습니다.
+
+설계 내용:
+- 소스 시스템: ERP, MES, CRM, 물류 시스템
+- ETL 도구: Apache Airflow + Spark
+- 데이터 레이크: AWS S3
+- 데이터 웨어하우스: Snowflake
+
+구현 착수: 5월 4일
+1차 파이프라인 완성: 6월 30일 목표

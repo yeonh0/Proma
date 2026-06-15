@@ -1,0 +1,22 @@
+From: 임재원 <jaewon.im@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 데이터 분석 플랫폼 ETL 설계서 첨부
+Date: Wed, 23 Apr 2026 09:00:00 +0900
+Message-ID: <mail086@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_mail086"
+
+--boundary_mail086
+Content-Type: text/plain; charset=UTF-8
+
+데이터 분석 플랫폼 ETL 파이프라인 설계서를 첨부합니다.
+
+--boundary_mail086
+Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document; name="ETL_설계서.docx"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="ETL_설계서.docx"
+
+UEsDBBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAd29yZC9kb2N1bWVudC54bWwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+
+--boundary_mail086--

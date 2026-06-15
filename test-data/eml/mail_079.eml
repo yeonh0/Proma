@@ -1,0 +1,24 @@
+From: 김민준 <minjun.kim@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: ERP 구축 요구사항 명세서 첨부
+Date: Sat, 05 Mar 2026 10:00:00 +0900
+Message-ID: <mail079@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_mail079"
+
+--boundary_mail079
+Content-Type: text/plain; charset=UTF-8
+
+ERP 구축 요구사항 명세서를 첨부하여 발송드립니다.
+검토 후 의견을 3월 12일까지 회신해 주세요.
+
+--boundary_mail079
+Content-Type: application/pdf; name="요구사항명세서_ERP.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="요구사항명세서_ERP.pdf"
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyA+PgplbmRvYmoKeHJlZgowIDEKMDAw
+MDAwMDAwMCA2NTUzNSBmCnRyYWlsZXIKPDwgL1Jvb3QgMSAwIFIgPj4Kc3RhcnR4cmVmCjkKJSVF
+T0Y=
+
+--boundary_mail079--

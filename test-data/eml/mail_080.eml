@@ -1,0 +1,23 @@
+From: 이서연 <seoyeon.lee@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: MES 개선 예산 계획서 첨부
+Date: Sat, 12 Mar 2026 11:00:00 +0900
+Message-ID: <mail080@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_mail080"
+
+--boundary_mail080
+Content-Type: text/plain; charset=UTF-8
+
+MES 개선 프로젝트 예산 계획서를 첨부드립니다.
+예산 검토 후 승인 요청드립니다.
+
+--boundary_mail080
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; name="MES_예산계획서.xlsx"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="MES_예산계획서.xlsx"
+
+UEsDBBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAW0NvbnRlbnRfVHlwZXNdLnhtbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+
+--boundary_mail080--

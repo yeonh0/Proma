@@ -1,0 +1,18 @@
+From: 이서연 <seoyeon.lee@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: MES 개선 설비 연동 테스트 완료
+Date: Tue, 08 May 2026 10:00:00 +0900
+Message-ID: <mail029@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+MES 개선 프로젝트 설비 연동 테스트가 완료되었습니다.
+
+테스트 대상 설비: CNC 머시닝센터 12대, 사출성형기 8대
+
+결과:
+- 실시간 가동 현황 수집: 정상
+- 알람 신호 전달: 정상
+- 생산 카운터 연동: 2대 오류 발생 → 수정 완료
+
+다음 단계: 생산 현장 시범 운영 (5월 20일~6월 10일)

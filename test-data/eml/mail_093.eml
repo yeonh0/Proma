@@ -1,0 +1,27 @@
+From: 정수빈 <subin.jung@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: Mobile App Development - QA Test Execution Report
+Date: Sat, 05 May 2026 11:00:00 +0900
+Message-ID: <mail093@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Hello,
+
+Please find the QA test execution report for the Mobile App Development project.
+
+Test Summary:
+- Total test cases: 487
+- Passed: 423 (86.9%)
+- Failed: 52 (10.7%)
+- Blocked: 12 (2.5%)
+
+Critical defects found: 3
+- DEF-001: Login failure on iOS 17.4 (in progress)
+- DEF-002: Push notification delay on Android 14 (in progress)
+- DEF-003: Calendar sync error (fixed)
+
+Target release date remains May 31.
+
+Best,
+Subin Jung

@@ -1,0 +1,20 @@
+From: 이서연 <seoyeon.lee@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 전자결재 결재 문서 보존 정책 수립
+Date: Sun, 13 Apr 2026 14:00:00 +0900
+Message-ID: <mail050@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+전자결재 시스템의 문서 보존 정책을 수립합니다.
+
+보존 기간 (법적 기준):
+- 이사회 의사록: 영구
+- 계약서: 10년
+- 세금계산서: 5년
+- 일반 품의서: 3년
+
+시스템 요건:
+- 문서 위·변조 방지 (해시값 저장)
+- 장기 보존 포맷: PDF/A
+- 보존 기간 만료 시 자동 알림

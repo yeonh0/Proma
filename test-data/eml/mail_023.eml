@@ -1,0 +1,21 @@
+From: 윤하늘 <haneul.yoon@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 보안 인프라 개선 제로트러스트 도입 검토
+Date: Tue, 22 Apr 2026 10:00:00 +0900
+Message-ID: <mail023@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+보안 인프라 개선 프로젝트에 제로트러스트 아키텍처 도입을 검토해 주시기 바랍니다.
+
+현황 문제:
+- VPN 기반 원격접속의 보안 한계
+- 내부망 신뢰 과도 부여
+
+도입 검토 솔루션:
+1. Zscaler ZIA/ZPA
+2. Palo Alto Prisma Access
+3. 국산 솔루션 (파수, 지니언스)
+
+ PoC 일정: 5월~6월 (2개월)
+최종 선정: 7월 예정

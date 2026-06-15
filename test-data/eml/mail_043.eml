@@ -1,0 +1,17 @@
+From: 강태양 <taeyang.kang@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 물류관리 실시간 배송 추적 기능 요건
+Date: Wed, 23 Mar 2026 14:00:00 +0900
+Message-ID: <mail043@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+물류관리 시스템 실시간 배송 추적 기능 요건을 정의합니다.
+
+기능 요건:
+- 배송사 API 연동 (CJ대한통운, 한진, 롯데택배)
+- GPS 기반 차량 위치 추적
+- 고객 SMS/카카오 알림 자동 발송
+- 배송 예상 도착 시간 표시
+
+연동 대상 배송사는 5월까지 최종 확정 예정입니다.

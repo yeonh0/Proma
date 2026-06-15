@@ -1,0 +1,24 @@
+From: 이서연 <seoyeon.lee@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 회의록: MES 개선 1차 요건 정의 회의
+Date: Fri, 11 Mar 2026 15:00:00 +0900
+Message-ID: <mail070@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+MES 개선 1차 요건 정의 회의 회의록입니다.
+
+일시: 2026년 3월 11일(수) 14:00~16:30
+참석자: 한승우, 오다은, 임재원, 현장 담당자 3명
+
+주요 논의 사항:
+- 현행 MES 문제점 12가지 도출
+- 개선 요건 우선순위 결정
+- 현장 데이터 수집 방식 논의
+
+액션 아이템:
+- [한승우] 요건 정의서 초안 3/18까지 작성
+- [임재원] PLC 통신 프로토콜 사양 3/13까지 확인
+- [오다은] 기존 MES 벤더 미팅 3/16 조율
+
+차기 회의: 3월 18일(수) 10:00

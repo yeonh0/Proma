@@ -1,0 +1,21 @@
+From: 임재원 <jaewon.im@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 구매관리 시스템 공급업체 포털 설계 검토
+Date: Thu, 17 Mar 2026 10:00:00 +0900
+Message-ID: <mail008@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+구매관리 시스템의 공급업체 포털 설계안을 검토해 주시기 바랍니다.
+
+주요 기능:
+1. 견적 요청 수신 및 응답
+2. 발주서 확인 및 납기 확정
+3. 납품 실적 조회
+4. 대금 지급 현황 확인
+
+보안 요구사항:
+- SSL/TLS 암호화 필수
+- OTP 인증 적용
+
+설계 검토 회의는 3월 24일 오전 10시입니다.

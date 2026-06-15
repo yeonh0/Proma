@@ -1,0 +1,763 @@
+{
+  "projects": [
+    {
+      "title": "ERP 구축",
+      "description": "전사 ERP 시스템 구축 프로젝트. 구매, 생산, 재고, 회계, 인사 모듈을 통합하여 경영 효율화를 목표로 한다.",
+      "status": "active",
+      "priority": "high",
+      "start_date": "2025-06-01",
+      "due_date": "2026-12-31",
+      "tasks": [
+        {
+          "title": "요구사항 분석",
+          "description": "각 부서별 업무 프로세스 분석 및 ERP 요구사항 정의서 작성",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2025-08-31"
+        },
+        {
+          "title": "RFP 작성 및 벤더 선정",
+          "description": "ERP 솔루션 제안요청서 작성, 벤더 평가 및 최종 선정",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2025-10-31"
+        },
+        {
+          "title": "기준 정보 구축",
+          "description": "품목 마스터, 거래처 마스터, BOM, 공정 마스터 등 기준 정보 등록",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-05-15"
+        },
+        {
+          "title": "1차 개발 (구매/재고 모듈)",
+          "description": "구매 발주, 입고, 재고 관리 모듈 개발 및 단위 테스트",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-30"
+        },
+        {
+          "title": "2차 개발 (생산/원가 모듈)",
+          "description": "생산 계획, 작업 지시, 원가 계산 모듈 개발",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-08-31"
+        },
+        {
+          "title": "통합 테스트",
+          "description": "모듈 간 연동 테스트 및 사용자 인수 테스트(UAT)",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-10-31"
+        },
+        {
+          "title": "현장 인프라 구성",
+          "description": "생산 현장 PC, 바코드 스캐너, 네트워크 인프라 구성",
+          "status": "in_progress",
+          "priority": "medium",
+          "due_date": "2026-06-30"
+        },
+        {
+          "title": "교육 및 전환",
+          "description": "사용자 교육 실시 및 운영 환경 전환",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-12-01"
+        }
+      ]
+    },
+    {
+      "title": "MES 개선",
+      "description": "제조 실행 시스템(MES) 기능 고도화. 실시간 설비 모니터링, OEE 개선, 불량률 감소를 목표로 한다.",
+      "status": "active",
+      "priority": "high",
+      "start_date": "2025-09-01",
+      "due_date": "2026-09-30",
+      "tasks": [
+        {
+          "title": "현행 MES 분석",
+          "description": "현행 MES 시스템 기능 분석 및 개선 요건 도출",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2025-10-31"
+        },
+        {
+          "title": "설비 인터페이스 설계",
+          "description": "PLC 통신 프로토콜 선정 및 설비 인터페이스 설계 (OPC-UA 적용)",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-02-28"
+        },
+        {
+          "title": "실시간 모니터링 개발",
+          "description": "설비 가동 현황 실시간 수집 및 대시보드 개발",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-30"
+        },
+        {
+          "title": "설비 연동 테스트",
+          "description": "CNC, 사출성형기 등 현장 설비 연동 테스트",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-05-10"
+        },
+        {
+          "title": "시범 운영",
+          "description": "안산 2공장 시범 운영 및 안정화",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-06-10"
+        },
+        {
+          "title": "전사 확대 적용",
+          "description": "전 공장 MES 개선 버전 확대 적용",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "title": "전자결재 시스템",
+      "description": "종이 기반 결재 프로세스를 전자결재로 전환. 결재 소요시간 단축 및 문서 관리 효율화.",
+      "status": "active",
+      "priority": "medium",
+      "start_date": "2025-10-01",
+      "due_date": "2026-08-31",
+      "tasks": [
+        {
+          "title": "프로세스 분석 및 설계",
+          "description": "현행 결재 프로세스 분석 및 To-Be 설계, 워크플로우 엔진 선정",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2025-12-31"
+        },
+        {
+          "title": "전자서명 솔루션 계약",
+          "description": "드림시큐리티 전자서명 솔루션 계약 및 연동 개발",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-02-28"
+        },
+        {
+          "title": "결재 양식 개발",
+          "description": "부서별 결재 양식 (품의서, 지출결의서, 휴가신청서 등) 개발",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-04-30"
+        },
+        {
+          "title": "UAT 실시",
+          "description": "사용자 인수 테스트 실시 및 결함 수정",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-03-27"
+        },
+        {
+          "title": "모바일 전자서명 개발",
+          "description": "공인인증서 및 생체인증 기반 모바일 서명 기능 추가",
+          "status": "in_progress",
+          "priority": "medium",
+          "due_date": "2026-06-30"
+        },
+        {
+          "title": "전사 배포",
+          "description": "전 직원 대상 교육 및 시스템 전환",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-08-31"
+        }
+      ]
+    },
+    {
+      "title": "생산관리 시스템",
+      "description": "생산 계획부터 실적 집계까지 통합 생산 관리 시스템 구축. MRP, CRP 연동으로 생산 효율 극대화.",
+      "status": "active",
+      "priority": "high",
+      "start_date": "2025-07-01",
+      "due_date": "2026-10-31",
+      "tasks": [
+        {
+          "title": "요구사항 정의",
+          "description": "생산팀, 구매팀과 협의하여 상세 요구사항 정의",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2025-09-30"
+        },
+        {
+          "title": "생산 계획 모듈 개발",
+          "description": "주간/월간 생산 계획 수립, MRP 연동 기능 개발",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-02-28"
+        },
+        {
+          "title": "작업 지시 모듈 개발",
+          "description": "자동 작업 지시서 발행, 작업자 배정 기능",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-03-15"
+        },
+        {
+          "title": "실적 집계 모듈 개발",
+          "description": "생산 실적 입력, 자동 카운터 연동, 불량 집계",
+          "status": "in_progress",
+          "priority": "medium",
+          "due_date": "2026-06-30"
+        },
+        {
+          "title": "ERP 연동 개발",
+          "description": "ERP 구매/재고 모듈과 실시간 데이터 연동",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-08-31"
+        },
+        {
+          "title": "통합 테스트 및 오픈",
+          "description": "전체 기능 통합 테스트, 사용자 교육, 운영 전환",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-10-31"
+        }
+      ]
+    },
+    {
+      "title": "그룹웨어 개선",
+      "description": "노후화된 그룹웨어 시스템 성능 개선 및 기능 업그레이드. 이메일, 캘린더, 화상회의 통합.",
+      "status": "active",
+      "priority": "medium",
+      "start_date": "2025-11-01",
+      "due_date": "2026-07-31",
+      "tasks": [
+        {
+          "title": "사용자 인터뷰 및 요건 도출",
+          "description": "전 직원 대상 사용자 인터뷰 및 개선 요건 우선순위 확정",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-01-31"
+        },
+        {
+          "title": "성능 최적화",
+          "description": "이메일 조회, 파일 업로드 등 핵심 기능 성능 개선",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-30"
+        },
+        {
+          "title": "화상회의 솔루션 연동",
+          "description": "Cisco Webex Enterprise 연동 및 그룹웨어 통합",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-04-01"
+        },
+        {
+          "title": "Beta 테스트",
+          "description": "팀 대표 20명 대상 Beta 버전 테스트 실시",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-05-01"
+        },
+        {
+          "title": "이메일 보안 강화",
+          "description": "S/MIME, SPF/DKIM/DMARC 적용 및 스팸 필터 고도화",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-06-30"
+        },
+        {
+          "title": "전사 배포",
+          "description": "전 직원 대상 그룹웨어 개선 버전 배포 및 교육",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-07-31"
+        }
+      ]
+    },
+    {
+      "title": "품질관리 시스템",
+      "description": "입고검사, 공정검사, 출하검사를 통합하는 품질관리 시스템 구축. SPC 도입으로 불량률 감소.",
+      "status": "active",
+      "priority": "medium",
+      "start_date": "2026-01-01",
+      "due_date": "2026-11-30",
+      "tasks": [
+        {
+          "title": "검수 기준 수립",
+          "description": "공장별 검수 기준 통일 및 표준 검사 기준서 작성",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-04-30"
+        },
+        {
+          "title": "SPC 기능 설계",
+          "description": "통계적 공정 관리(SPC) 기능 설계 및 관리도 종류 선정",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-03-31"
+        },
+        {
+          "title": "검사 모듈 개발",
+          "description": "입고/공정/출하 검사 화면 개발 및 바코드 연동",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-07-31"
+        },
+        {
+          "title": "SPC 대시보드 개발",
+          "description": "실시간 관리도 화면 및 이상 알림 기능 개발",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-09-30"
+        },
+        {
+          "title": "현장 테스트",
+          "description": "생산 현장 파일럿 테스트 및 결함 수정",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-10-31"
+        }
+      ]
+    },
+    {
+      "title": "인사관리 시스템",
+      "description": "임직원 정보, 급여, 발령, 성과평가를 통합하는 인사관리 시스템 도입. 채용부터 퇴직까지 전 주기 관리.",
+      "status": "active",
+      "priority": "medium",
+      "start_date": "2025-12-01",
+      "due_date": "2026-09-30",
+      "tasks": [
+        {
+          "title": "데이터 마이그레이션 계획 수립",
+          "description": "현행 데이터 분석 및 마이그레이션 방안 수립",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-03-31"
+        },
+        {
+          "title": "데이터 정제 및 이관",
+          "description": "임직원 정보, 급여 이력, 인사 발령 이력 정제 및 이관",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-04-30"
+        },
+        {
+          "title": "급여 계산 로직 개발",
+          "description": "통상임금, 초과근무, 4대보험 계산 로직 개발 및 검증",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-05-31"
+        },
+        {
+          "title": "성과평가 연동 개발",
+          "description": "성과평가 시스템 API 연동 및 인사 데이터 자동 연계",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-07-31"
+        },
+        {
+          "title": "UAT 및 오픈",
+          "description": "인사팀 사용자 인수 테스트 및 운영 전환",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "title": "구매관리 시스템",
+      "description": "구매 요청부터 대금 지급까지 구매 프로세스 전 과정을 디지털화. 전자입찰 및 공급업체 포털 포함.",
+      "status": "active",
+      "priority": "medium",
+      "start_date": "2026-01-15",
+      "due_date": "2026-10-31",
+      "tasks": [
+        {
+          "title": "공급업체 포털 설계",
+          "description": "공급업체 견적, 발주 확인, 납품 관리 포털 UI/UX 설계",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-03-31"
+        },
+        {
+          "title": "전자입찰 기능 개발",
+          "description": "입찰 공고, 온라인 입찰서 접수, 개찰 기능 개발",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-07-31"
+        },
+        {
+          "title": "전자세금계산서 연동",
+          "description": "홈택스 전자세금계산서 수신 자동화 및 ERP 전표 연동",
+          "status": "in_progress",
+          "priority": "medium",
+          "due_date": "2026-06-30"
+        },
+        {
+          "title": "테스트 환경 구성",
+          "description": "QA 테스트 서버, 샘플 데이터, 테스트 계정 구성",
+          "status": "done",
+          "priority": "low",
+          "due_date": "2026-05-14"
+        },
+        {
+          "title": "통합 테스트",
+          "description": "개발, QA, 업무팀 통합 테스트 실시",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "title": "고객관리 시스템",
+      "description": "고객 정보 통합 관리 및 영업 파이프라인 관리를 위한 CRM 시스템 구축.",
+      "status": "active",
+      "priority": "medium",
+      "start_date": "2026-03-01",
+      "due_date": "2026-12-31",
+      "tasks": [
+        {
+          "title": "고객 세그먼테이션 분석",
+          "description": "현행 고객 데이터 RFM 분석 및 LTV 산출",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-03-31"
+        },
+        {
+          "title": "CRM 설계",
+          "description": "고객 정보 구조, 영업 파이프라인, 캠페인 관리 기능 설계",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-15"
+        },
+        {
+          "title": "외부 API 연동",
+          "description": "카카오 알림톡, SMS, 이메일 발송 API 연동 개발 및 테스트",
+          "status": "in_progress",
+          "priority": "medium",
+          "due_date": "2026-06-30"
+        },
+        {
+          "title": "모바일 앱 우선 개발",
+          "description": "영업 담당자 모바일 앱 CRM 접근 기능 개발",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-10-31"
+        },
+        {
+          "title": "AI 고객 이탈 예측 (2단계)",
+          "description": "머신러닝 기반 고객 이탈 예측 모델 개발 및 적용",
+          "status": "todo",
+          "priority": "low",
+          "due_date": "2026-12-31"
+        }
+      ]
+    },
+    {
+      "title": "물류관리 시스템",
+      "description": "입고, 보관, 출고, 배송 추적을 통합하는 물류 관리 시스템 구축. WMS 연계 및 GS1 바코드 표준 적용.",
+      "status": "paused",
+      "priority": "low",
+      "start_date": "2026-04-01",
+      "due_date": "2027-03-31",
+      "tasks": [
+        {
+          "title": "WMS 연계 방안 확정",
+          "description": "기존 레거시 WMS 연계 방식 분석 및 미들웨어 도입 결정",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-30"
+        },
+        {
+          "title": "현장 실사",
+          "description": "인천 물류센터, 수원 배송센터 현장 실사 및 인프라 조사",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-04-23"
+        },
+        {
+          "title": "바코드 라벨 표준화",
+          "description": "GS1-128 바코드 및 QR코드 라벨 표준 확정",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-04-20"
+        },
+        {
+          "title": "시스템 설계",
+          "description": "물류 관리 시스템 아키텍처 및 기능 설계 (일시 중단)",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-09-30"
+        },
+        {
+          "title": "배송 추적 연동 개발",
+          "description": "CJ, 한진, 롯데 택배 API 연동 및 GPS 추적 기능 개발",
+          "status": "todo",
+          "priority": "low",
+          "due_date": "2027-01-31"
+        }
+      ]
+    },
+    {
+      "title": "보안 인프라 개선",
+      "description": "제로트러스트 아키텍처 도입 및 망분리, 취약점 개선을 통한 전사 보안 수준 향상.",
+      "status": "active",
+      "priority": "high",
+      "start_date": "2026-02-01",
+      "due_date": "2026-12-31",
+      "tasks": [
+        {
+          "title": "취약점 점검 및 긴급 조치",
+          "description": "외부 취약점 점검 및 긴급 패치 적용 (방화벽, 인증서 등)",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-03-31"
+        },
+        {
+          "title": "망분리 솔루션 PoC",
+          "description": "가상화/스트리밍 방식 망분리 솔루션 PoC 실시",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-30"
+        },
+        {
+          "title": "제로트러스트 PoC",
+          "description": "Zscaler, Palo Alto, 국산 솔루션 제로트러스트 PoC",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-06-30"
+        },
+        {
+          "title": "솔루션 선정 및 계약",
+          "description": "PoC 결과 기반 최종 솔루션 선정 및 계약",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-07-31"
+        },
+        {
+          "title": "구축 및 적용",
+          "description": "선정 솔루션 전사 적용 및 사용자 교육",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-12-31"
+        }
+      ]
+    },
+    {
+      "title": "모바일 앱 개발",
+      "description": "임직원용 모바일 앱 개발 (iOS/Android). 전자결재, 그룹웨어, CRM 등 주요 기능 모바일 접근 지원.",
+      "status": "completed",
+      "priority": "medium",
+      "start_date": "2025-08-01",
+      "due_date": "2026-05-31",
+      "tasks": [
+        {
+          "title": "UX 설계 및 프로토타이핑",
+          "description": "사용자 리서치 기반 UX 설계 및 Figma 프로토타입 제작",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2025-11-30"
+        },
+        {
+          "title": "UI 개발 (React Native)",
+          "description": "React Native 기반 크로스플랫폼 앱 UI 개발",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-02-28"
+        },
+        {
+          "title": "푸시 알림 시스템 개발",
+          "description": "FCM, APNs 기반 푸시 알림 서버 및 클라이언트 개발",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-03-31"
+        },
+        {
+          "title": "QA 테스트",
+          "description": "기능/회귀/성능/보안 테스트 총 487개 케이스 실행",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-05-15"
+        },
+        {
+          "title": "스토어 배포",
+          "description": "App Store, Google Play 스토어 심사 및 배포",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-05-31"
+        }
+      ]
+    },
+    {
+      "title": "데이터 분석 플랫폼",
+      "description": "전사 데이터 통합 분석 플랫폼 구축. AWS 기반 데이터 레이크, Snowflake DW, Tableau/Power BI 도입.",
+      "status": "active",
+      "priority": "medium",
+      "start_date": "2026-04-01",
+      "due_date": "2026-12-31",
+      "tasks": [
+        {
+          "title": "데이터 거버넌스 정책 수립",
+          "description": "개인정보 비식별화, 접근 권한, 보존 기간 정책 확정",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-05-31"
+        },
+        {
+          "title": "ETL 파이프라인 설계",
+          "description": "Airflow + Spark 기반 ETL 파이프라인 설계 완료",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-27"
+        },
+        {
+          "title": "데이터 품질 관리",
+          "description": "소스 데이터 품질 이슈 정제 (ERP 중복 키, MES 누락 등)",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-06-15"
+        },
+        {
+          "title": "ETL 파이프라인 구현",
+          "description": "ERP, MES, CRM, 물류 시스템 ETL 파이프라인 개발",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-07-31"
+        },
+        {
+          "title": "BI 대시보드 개발",
+          "description": "Tableau 경영 대시보드 및 Power BI 팀별 분석 템플릿 개발",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-10-31"
+        },
+        {
+          "title": "AI/ML 모델 연동",
+          "description": "수요 예측, 불량 예측 ML 모델 개발 및 플랫폼 연동",
+          "status": "todo",
+          "priority": "low",
+          "due_date": "2026-12-31"
+        }
+      ]
+    },
+    {
+      "title": "클라우드 마이그레이션",
+      "description": "온프레미스 서버 47대를 AWS로 마이그레이션. 연간 인프라 비용 1.5억원 절감 목표.",
+      "status": "completed",
+      "priority": "high",
+      "start_date": "2025-05-01",
+      "due_date": "2026-06-10",
+      "tasks": [
+        {
+          "title": "현행 인프라 사전 조사",
+          "description": "서버 현황, 비용, 애플리케이션 의존성 분석",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-15"
+        },
+        {
+          "title": "CSP 선정",
+          "description": "AWS, Azure, GCP 비교 평가 및 AWS 최종 선정",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-29"
+        },
+        {
+          "title": "보안 아키텍처 설계",
+          "description": "WAF, Shield, KMS, IAM 등 AWS 보안 아키텍처 설계",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-05-01"
+        },
+        {
+          "title": "1단계 환경 구성",
+          "description": "VPC, 서브넷, IAM, 보안 그룹 기본 구성 완료",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-05-16"
+        },
+        {
+          "title": "개발/테스트 환경 마이그레이션",
+          "description": "개발 및 테스트 서버 AWS 이전 완료",
+          "status": "done",
+          "priority": "medium",
+          "due_date": "2026-05-31"
+        },
+        {
+          "title": "운영 환경 마이그레이션",
+          "description": "전체 운영 서버 AWS 이전 및 온프레미스 폐기",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-06-10"
+        }
+      ]
+    },
+    {
+      "title": "Proma 개발",
+      "description": "이메일 기반 AI 프로젝트 관리 도구 Proma 개발. 이메일 AI 분류, 일정 관리, 태스크 관리 기능 포함.",
+      "status": "active",
+      "priority": "high",
+      "start_date": "2026-01-01",
+      "due_date": "2026-12-31",
+      "tasks": [
+        {
+          "title": "스프린트 1 - 기반 기능",
+          "description": "프로젝트 CRUD, 태스크 관리, 이메일 수신 파싱, 기본 AI 분류 연동",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-04-03"
+        },
+        {
+          "title": "AI 분류 정확도 개선",
+          "description": "학습 데이터 확충 및 모델 튜닝으로 91% 정확도 달성",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-05-04"
+        },
+        {
+          "title": "스프린트 2 - Calendar View",
+          "description": "일정 관리 캘린더 뷰 개발 (월/주/일 단위)",
+          "status": "done",
+          "priority": "high",
+          "due_date": "2026-05-06"
+        },
+        {
+          "title": "AI 답장 초안 생성",
+          "description": "이메일 컨텍스트 기반 AI 답장 초안 자동 생성 기능",
+          "status": "in_progress",
+          "priority": "high",
+          "due_date": "2026-06-30"
+        },
+        {
+          "title": "이메일 스레드 시각화",
+          "description": "관련 이메일 스레드 연결 및 시각적 표시 기능",
+          "status": "in_progress",
+          "priority": "medium",
+          "due_date": "2026-07-31"
+        },
+        {
+          "title": "알림 기능 개발",
+          "description": "마감일 알림, 중요 이메일 알림, 일정 리마인더",
+          "status": "todo",
+          "priority": "medium",
+          "due_date": "2026-08-31"
+        },
+        {
+          "title": "대시보드 개선",
+          "description": "프로젝트 현황 대시보드 KPI 지표 개선",
+          "status": "todo",
+          "priority": "low",
+          "due_date": "2026-09-30"
+        },
+        {
+          "title": "통합 테스트 및 QA",
+          "description": "전체 기능 통합 테스트, 성능 테스트 및 보안 검토",
+          "status": "todo",
+          "priority": "high",
+          "due_date": "2026-11-30"
+        }
+      ]
+    }
+  ]
+}

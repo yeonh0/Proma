@@ -1,0 +1,31 @@
+From: 오다은 <daeun.oh@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 보안 취약점 점검 보고서 첨부
+Date: Wed, 16 Apr 2026 10:00:00 +0900
+Message-ID: <mail085@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_mail085"
+
+--boundary_mail085
+Content-Type: text/plain; charset=UTF-8
+
+외부 보안 취약점 점검 보고서 첨부드립니다. 보안 사항이니 제한 배포 바랍니다.
+
+--boundary_mail085
+Content-Type: application/pdf; name="취약점점검보고서.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="취약점점검보고서.pdf"
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyA+PgplbmRvYmoKeHJlZgowIDEKMDAw
+MDAwMDAwMCA2NTUzNSBmCnRyYWlsZXIKPDwgL1Jvb3QgMSAwIFIgPj4Kc3RhcnR4cmVmCjkKJSVF
+T0Y=
+
+--boundary_mail085
+Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document; name="조치계획서.docx"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="조치계획서.docx"
+
+UEsDBBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAd29yZC9kb2N1bWVudC54bWwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+
+--boundary_mail085--

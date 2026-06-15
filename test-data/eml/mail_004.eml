@@ -1,0 +1,20 @@
+From: 최유진 <yujin.choi@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 생산관리 시스템 1차 개발 완료 보고
+Date: Tue, 08 Mar 2026 09:00:00 +0900
+Message-ID: <mail004@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+생산관리 시스템 1차 개발이 완료되었습니다.
+
+완료 기능:
+- 생산 계획 등록/수정/삭제
+- 작업 지시서 자동 발행
+- 생산 실적 입력 화면
+
+미완료 기능 (2차 예정):
+- 원자재 자동 발주 연계
+- KPI 대시보드
+
+시연은 3월 15일 오후 2시로 예정되어 있습니다.

@@ -1,0 +1,25 @@
+From: 임재원 <jaewon.im@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 회의록: Proma 스프린트 2 회고 미팅
+Date: Sun, 06 May 2026 15:00:00 +0900
+Message-ID: <mail076@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Proma 개발 스프린트 2 회고 미팅 회의록입니다.
+
+일시: 2026년 5월 6일(수) 15:00~16:00
+참석자: 개발팀 전원 (6명)
+
+잘한 점:
+- AI 분류 정확도 대폭 향상
+- Calendar View 기능 예정일 내 완료
+
+개선할 점:
+- 코드 리뷰 시간 확보 필요
+- 테스트 커버리지 60% → 80% 목표
+
+액션 아이템:
+- 스프린트 3 시작 전 기술 부채 정리 1일 할당
+- 자동화 테스트 강화
+- 매주 금요일 코드 리뷰 1시간 확보

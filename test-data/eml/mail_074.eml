@@ -1,0 +1,22 @@
+From: 한승우 <seungwoo.han@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 회의록: 인사관리 시스템 데이터 마이그레이션 회의
+Date: Tue, 15 Apr 2026 16:00:00 +0900
+Message-ID: <mail074@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+인사관리 시스템 데이터 마이그레이션 회의록입니다.
+
+일시: 2026년 4월 15일(수) 14:00~15:30
+참석자: 한승우, 인사팀 담당자 3명, DBA 1명
+
+논의 결과:
+- 마이그레이션 도구: Python 스크립트 자체 개발
+- 데이터 정제 담당: 인사팀 자체 처리
+- 마이그레이션 완료 기준: 오류율 0.1% 이하
+
+액션 아이템:
+- [DBA] 소스 DB 분석 4/18까지
+- [인사팀] 데이터 정제 가이드 작성 4/20까지
+- [한승우] 마이그레이션 스크립트 개발 4/25까지

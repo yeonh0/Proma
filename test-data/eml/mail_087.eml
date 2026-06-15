@@ -1,0 +1,22 @@
+From: 신예린 <yerin.shin@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 모바일 앱 테스트 케이스 엑셀 첨부
+Date: Mon, 07 May 2026 11:00:00 +0900
+Message-ID: <mail087@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_mail087"
+
+--boundary_mail087
+Content-Type: text/plain; charset=UTF-8
+
+모바일 앱 전체 테스트 케이스 목록을 엑셀로 첨부합니다.
+
+--boundary_mail087
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; name="모바일앱_테스트케이스.xlsx"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="모바일앱_테스트케이스.xlsx"
+
+UEsDBBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAW0NvbnRlbnRfVHlwZXNdLnhtbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+
+--boundary_mail087--

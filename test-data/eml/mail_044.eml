@@ -1,0 +1,20 @@
+From: 윤하늘 <haneul.yoon@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 보안 인프라 망분리 솔루션 도입 검토
+Date: Fri, 25 Mar 2026 10:00:00 +0900
+Message-ID: <mail044@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+보안 인프라 개선을 위한 망분리 솔루션 도입을 검토합니다.
+
+현황:
+- 인터넷망/업무망 논리적 분리만 적용
+- 물리적 망분리 미적용
+
+검토 솔루션:
+1. 가상화 기반 망분리 (VM)
+2. 스트리밍 기반 망분리
+3. CBT(클라이언트 기반) 방식
+
+도입 비용 및 사용자 편의성 종합 검토 후 4월 중 결정 예정

@@ -1,0 +1,23 @@
+From: 최유진 <yujin.choi@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 품질관리 시스템 화면 설계안 이미지 첨부
+Date: Sat, 26 Mar 2026 10:00:00 +0900
+Message-ID: <mail082@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_mail082"
+
+--boundary_mail082
+Content-Type: text/plain; charset=UTF-8
+
+품질관리 시스템 화면 설계안 이미지를 첨부드립니다.
+ UI 검토 후 의견 주세요.
+
+--boundary_mail082
+Content-Type: image/png; name="화면설계_품질관리.png"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="화면설계_품질관리.png"
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAA
+AABJRU5ErkJggg==
+
+--boundary_mail082--

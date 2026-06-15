@@ -1,0 +1,23 @@
+From: 오다은 <daeun.oh@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 회의록: 클라우드 마이그레이션 아키텍처 확정 회의
+Date: Tue, 22 Apr 2026 15:00:00 +0900
+Message-ID: <mail075@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+클라우드 마이그레이션 아키텍처 확정 회의록을 공유합니다.
+
+일시: 2026년 4월 22일(수) 10:00~12:00
+참석자: 임재원(PM), AWS SA, 보안팀장, 인프라팀장
+
+확정 사항:
+- 리전: ap-northeast-2 (서울)
+- 멀티 AZ 구성: 필수 적용
+- 재해 복구 목표: RTO 4시간, RPO 1시간
+- VPN 연결: AWS Site-to-Site VPN
+
+액션 아이템:
+- [임재원] 아키텍처 확정본 4/25 배포
+- [인프라팀] VPN 설정 4/28까지
+- [보안팀] 보안 정책 문서 4/30까지

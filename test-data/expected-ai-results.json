@@ -1,0 +1,425 @@
+{
+  "results": [
+    {
+      "email_file": "mail_001.eml",
+      "summary": "ERP 구축 프로젝트 요구사항 분석 결과 검토 요청 메일. 구매 모듈 연계 방식, 재고 관리 실시간 동기화, 레거시 마이그레이션 방안 등 3가지 항목에 대한 금요일까지 회신 요청.",
+      "classification": "업무 요청",
+      "project_candidates": [
+        { "project": "ERP 구축", "confidence": 0.97 }
+      ],
+      "action_items": [
+        "요구사항 명세서 검토 후 의견 회신 (이번 주 금요일까지)",
+        "구매 모듈 연계 방식 검토",
+        "재고 관리 실시간 동기화 방안 검토",
+        "레거시 시스템 마이그레이션 방안 검토"
+      ],
+      "draft_reply_hint": "요구사항 검토 완료 및 의견 포함 회신. 각 항목별 검토 의견 작성 필요."
+    },
+    {
+      "email_file": "mail_002.eml",
+      "summary": "MES 개선 프로젝트 착수 보고 자료 공유 및 다음 주 월요일 10시 킥오프 미팅 안내. 실시간 생산 현황 모니터링, 불량률 집계, 설비 가동률 대시보드가 주요 개선 대상.",
+      "classification": "프로젝트 공지",
+      "project_candidates": [
+        { "project": "MES 개선", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "착수 보고 자료 사전 검토",
+        "킥오프 미팅 일정 캘린더 등록 (다음 주 월요일 10시)",
+        "질문 사항 정리"
+      ],
+      "draft_reply_hint": "착수 보고 자료 수신 확인 및 킥오프 미팅 참석 확인 회신."
+    },
+    {
+      "email_file": "mail_003.eml",
+      "summary": "전자결재 시스템 UAT 일정 안내. 3월 20일~27일 3층 교육실에서 총무팀, 인사팀, 재무팀 대상 진행. 부서별 테스트 시나리오는 별도 공유 예정.",
+      "classification": "일정 안내",
+      "project_candidates": [
+        { "project": "전자결재 시스템", "confidence": 0.96 }
+      ],
+      "action_items": [
+        "UAT 일정 캘린더 등록 (3/20~3/27)",
+        "참여 부서 담당자에게 일정 전달",
+        "테스트 시나리오 수신 대기"
+      ],
+      "draft_reply_hint": "UAT 일정 확인 및 참여 준비 상황 회신."
+    },
+    {
+      "email_file": "mail_004.eml",
+      "summary": "생산관리 시스템 1차 개발 완료 보고. 생산 계획 CRUD, 작업 지시서 자동 발행, 실적 입력 기능 완료. 원자재 자동 발주 연계 등은 2차 예정. 3월 15일 오후 2시 시연.",
+      "classification": "완료 보고",
+      "project_candidates": [
+        { "project": "생산관리 시스템", "confidence": 0.94 }
+      ],
+      "action_items": [
+        "3월 15일 오후 2시 시연 일정 확인 및 참석",
+        "1차 개발 완료 기능 검토",
+        "2차 개발 범위 확인"
+      ],
+      "draft_reply_hint": "1차 개발 완료 수고 격려 및 시연 참석 확인 회신."
+    },
+    {
+      "email_file": "mail_005.eml",
+      "summary": "그룹웨어 개선 사용자 인터뷰 결과 보고. 모바일 앱 속도 저하(78%), 캘린더 공유 미흡(62%), 전자결재 연동 오류(45%) 순으로 불만 집중. 개선 우선순위 재조정 필요.",
+      "classification": "조사 보고",
+      "project_candidates": [
+        { "project": "그룹웨어 개선", "confidence": 0.93 }
+      ],
+      "action_items": [
+        "개선 우선순위 재조정 기획 회의 일정 확인",
+        "모바일 앱 속도 개선 방안 검토",
+        "캘린더 공유 기능 개선 방안 검토"
+      ],
+      "draft_reply_hint": "인터뷰 결과 수신 확인 및 우선순위 재조정 회의 참여 의사 회신."
+    },
+    {
+      "email_file": "mail_006.eml",
+      "summary": "품질관리 시스템 개발을 위한 검수 기준 협의 요청. 공장별 상이한 기준 통합이 시급하며 불량 판정 기준, 샘플링 방식, 이력 보관 기간 협의 필요. 3월 20일까지 의견 요청.",
+      "classification": "업무 요청",
+      "project_candidates": [
+        { "project": "품질관리 시스템", "confidence": 0.94 }
+      ],
+      "action_items": [
+        "불량 판정 기준 의견 정리 (3/20까지)",
+        "샘플링 방식 표준화 의견 제출",
+        "이력 보관 기간 설정 의견 제출"
+      ],
+      "draft_reply_hint": "검수 기준 협의 관련 당사 의견 정리하여 회신."
+    },
+    {
+      "email_file": "mail_007.eml",
+      "summary": "인사관리 시스템 데이터 마이그레이션 계획 공유. 임직원 2,400건, 급여 이력, 발령 이력, 교육 기록 이관 예정. 4월 1일~14일 마이그레이션 및 검증 진행.",
+      "classification": "계획 공지",
+      "project_candidates": [
+        { "project": "인사관리 시스템", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "소관 데이터 정제 협조 (4/1 이전)",
+        "마이그레이션 일정 캘린더 등록",
+        "검증 기간 참여 준비 (4/8~14)"
+      ],
+      "draft_reply_hint": "마이그레이션 계획 수신 확인 및 데이터 정제 협조 가능 여부 회신."
+    },
+    {
+      "email_file": "mail_008.eml",
+      "summary": "구매관리 시스템 공급업체 포털 설계 검토 요청. 견적 요청, 발주 확인, 납품 실적, 대금 현황 기능 포함. SSL/TLS 암호화 및 OTP 인증 보안 요건 적용. 3월 24일 검토 회의.",
+      "classification": "업무 요청",
+      "project_candidates": [
+        { "project": "구매관리 시스템", "confidence": 0.94 }
+      ],
+      "action_items": [
+        "공급업체 포털 설계안 검토",
+        "보안 요건 적합성 확인",
+        "3월 24일 오전 10시 설계 검토 회의 참석"
+      ],
+      "draft_reply_hint": "설계안 검토 완료 및 의견 회신. 회의 참석 확인."
+    },
+    {
+      "email_file": "mail_009.eml",
+      "summary": "고객관리 시스템(CRM) 1단계 기능 범위 확정 안내. 고객 정보 통합, 영업 파이프라인, 문의 처리, 마케팅 캠페인 포함. AI 예측 및 실시간 채팅은 2단계. 4월 1일 개발 착수 예정.",
+      "classification": "프로젝트 공지",
+      "project_candidates": [
+        { "project": "고객관리 시스템", "confidence": 0.93 }
+      ],
+      "action_items": [
+        "1단계 기능 범위 확인 및 동의 여부 회신",
+        "4월 1일 개발 착수 준비 확인"
+      ],
+      "draft_reply_hint": "CRM 1단계 범위 확정 수신 확인 및 추가 의견 있으면 포함하여 회신."
+    },
+    {
+      "email_file": "mail_010.eml",
+      "summary": "물류관리 시스템과 레거시 WMS 연계 방안 검토 요청. WMS는 FTP 방식 레거시 시스템. 미들웨어(EAI), DB 직접 연계, WMS 교체 3가지 방안 분석 요청. 4월 5일까지 보고.",
+      "classification": "업무 요청",
+      "project_candidates": [
+        { "project": "물류관리 시스템", "confidence": 0.92 }
+      ],
+      "action_items": [
+        "WMS 연계 방안 3가지 비용 및 리스크 분석 (4/5까지)",
+        "미들웨어 솔루션 시장 조사",
+        "WMS 레거시 시스템 사양 파악"
+      ],
+      "draft_reply_hint": "WMS 연계 방안 분석 착수 확인 및 예상 완료 일정 회신."
+    },
+    {
+      "email_file": "mail_011.eml",
+      "summary": "보안 인프라 개선 외부 취약점 점검 결과 보고. 방화벽 정책 미흡, SSL 인증서 만료 임박, 관리자 계정 패스워드 정책 미적용 등 긴급 취약점 3건 발견. 이번 주 즉시 조치 예정.",
+      "classification": "보안 보고",
+      "project_candidates": [
+        { "project": "보안 인프라 개선", "confidence": 0.96 }
+      ],
+      "action_items": [
+        "긴급 취약점 조치 현황 확인",
+        "SSL 인증서 갱신 일정 확인",
+        "관리자 계정 패스워드 정책 적용 지원",
+        "전체 취약점 보고서 첨부 파일 검토"
+      ],
+      "draft_reply_hint": "취약점 점검 결과 수신 확인 및 긴급 조치 지원 가능 여부 회신."
+    },
+    {
+      "email_file": "mail_012.eml",
+      "summary": "모바일 앱 개발 UI/UX 프로토타입 리뷰 결과 공유. 메인 화면 재설계, 알림 설정 UI 개선, 다크 모드 지원 요청. 수정 프로토타입 4월 10일까지 제출, 약 3인/주 소요 예상.",
+      "classification": "결과 보고",
+      "project_candidates": [
+        { "project": "모바일 앱 개발", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "수정 프로토타입 제출 일정 확인 (4/10)",
+        "메인 화면 재설계 방향 논의",
+        "다크 모드 지원 요건 구체화"
+      ],
+      "draft_reply_hint": "프로토타입 리뷰 결과 확인 및 수정 방향에 대한 의견 회신."
+    },
+    {
+      "email_file": "mail_013.eml",
+      "summary": "데이터 분석 플랫폼 구축 전 데이터 거버넌스 정책 수립 필요. 개인정보 비식별화, 접근 권한 체계, 데이터 품질 기준, 보존/삭제 정책 검토 필요. 법무팀/정보보안팀 협의 후 5월 확정.",
+      "classification": "업무 요청",
+      "project_candidates": [
+        { "project": "데이터 분석 플랫폼", "confidence": 0.93 }
+      ],
+      "action_items": [
+        "데이터 거버넌스 정책 수립 참여 여부 회신",
+        "법무팀/정보보안팀 협의 일정 조율",
+        "현행 데이터 관리 정책 현황 파악"
+      ],
+      "draft_reply_hint": "거버넌스 정책 수립 참여 의향 및 협의 가능 일정 회신."
+    },
+    {
+      "email_file": "mail_014.eml",
+      "summary": "클라우드 마이그레이션 사전 조사 결과. 온프레미스 47대, 가상화 23대 총 70대 서버. 연간 인프라 비용 4.8억원, 클라우드 전환 시 1.5억원 절감 예상. 상세 보고서 4월 15일.",
+      "classification": "조사 보고",
+      "project_candidates": [
+        { "project": "클라우드 마이그레이션", "confidence": 0.96 }
+      ],
+      "action_items": [
+        "사전 조사 결과 검토",
+        "상세 분석 보고서 수신 대기 (4/15)",
+        "전환 우선 대상 범위 협의 참여"
+      ],
+      "draft_reply_hint": "사전 조사 결과 수신 확인 및 상세 보고서 검토 일정 안내 회신."
+    },
+    {
+      "email_file": "mail_015.eml",
+      "summary": "Proma 개발 스프린트 1 완료 보고. 프로젝트 CRUD, 태스크 관리, 이메일 수신/파싱, 기본 AI 분류 연동 완료. 스프린트 2는 Calendar View, AI 답장 초안, 대시보드 개선. 회고 4월 5일 3시.",
+      "classification": "완료 보고",
+      "project_candidates": [
+        { "project": "Proma 개발", "confidence": 0.97 }
+      ],
+      "action_items": [
+        "스프린트 1 완료 기능 검수",
+        "4월 5일 오후 3시 회고 미팅 참석",
+        "스프린트 2 우선순위 의견 제출"
+      ],
+      "draft_reply_hint": "스프린트 1 완료 수고 격려 및 회고 미팅 참석 확인 회신."
+    },
+    {
+      "email_file": "mail_016.eml",
+      "summary": "ERP 구축 현장 방문 결과 보고. 안산 2공장, 평택 공장 방문 결과 바코드 스캐너 26대 교체, PC 노후화, 네트워크 증설 필요. 추가 예산 8천만원 필요. 다음 주 예산 협의 회의 예정.",
+      "classification": "현장 보고",
+      "project_candidates": [
+        { "project": "ERP 구축", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "인프라 추가 예산 8천만원 검토",
+        "예산 협의 회의 일정 확인 및 참석",
+        "바코드 스캐너 교체 업체 견적 의뢰"
+      ],
+      "draft_reply_hint": "현장 방문 결과 수신 및 예산 협의 회의 참석 확인 회신."
+    },
+    {
+      "email_file": "mail_017.eml",
+      "summary": "MES 개선 인터페이스 설계서 검토 의견. PLC 통신 OPC-UA 적용, 데이터 수집 주기 500ms 단축, 알람 처리 우선순위 체계 추가 요청. 수정 설계서 4월 15일까지 제출 요청.",
+      "classification": "검토 의견",
+      "project_candidates": [
+        { "project": "MES 개선", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "OPC-UA 프로토콜 적용 가능성 검토",
+        "데이터 수집 주기 500ms 달성 가능성 검토",
+        "수정 설계서 제출 (4/15까지)"
+      ],
+      "draft_reply_hint": "검토 의견 수신 확인 및 수정 일정 회신."
+    },
+    {
+      "email_file": "mail_018.eml",
+      "summary": "품질관리 시스템 검사 기준서 초안 공유. AQL 기반 입고 검사, SPC 공정 검사, 100% 전수 출하 검사 기준 포함. 4월 17일까지 현장 의견 취합 후 확정 예정.",
+      "classification": "문서 공유",
+      "project_candidates": [
+        { "project": "품질관리 시스템", "confidence": 0.94 }
+      ],
+      "action_items": [
+        "검사 기준서 초안 검토",
+        "현장 의견 수렴 후 피드백 제출 (4/17까지)",
+        "품질팀 협의 일정 조율"
+      ],
+      "draft_reply_hint": "검사 기준서 초안 수신 확인 및 현장 의견 취합 협조 의사 회신."
+    },
+    {
+      "email_file": "mail_019.eml",
+      "summary": "인사관리 시스템 급여 계산 로직 검증 요청. 통상임금, 초과근무, 4대보험, 연말정산 계산 로직 검증 필요. 현행 급여 프로그램과 비교 테스트 4월 25일까지 완료 요청.",
+      "classification": "업무 요청",
+      "project_candidates": [
+        { "project": "인사관리 시스템", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "급여 계산 검증 참여 확인 (4/25 기한)",
+        "현행 급여 프로그램 담당자 연락",
+        "급여팀과 검증 일정 협의"
+      ],
+      "draft_reply_hint": "급여 계산 검증 협조 가능 여부 및 참여 가능 일정 회신."
+    },
+    {
+      "email_file": "mail_020.eml",
+      "summary": "구매관리 시스템에 전자입찰 기능 추가 요청. 입찰 공고, 온라인 접수, 개찰, 전자 서명 연동 포함. 범위 추가에 따른 일정 및 예산 영향도 분석을 5월 1일까지 보고 요청.",
+      "classification": "범위 변경 요청",
+      "project_candidates": [
+        { "project": "구매관리 시스템", "confidence": 0.94 }
+      ],
+      "action_items": [
+        "전자입찰 기능 추가 영향도 분석 (5/1까지)",
+        "일정 및 예산 증가 분석",
+        "전자 서명 연동 방안 검토"
+      ],
+      "draft_reply_hint": "범위 추가 요청 수신 확인 및 영향도 분석 착수 일정 회신."
+    },
+    {
+      "email_file": "mail_021.eml",
+      "summary": "고객관리 시스템 외부 API 연동 테스트 결과. 카카오 알림톡 99.8% 정상, SMS 정상, 이메일 SMTP 인증 오류 발생. 이메일 수정 후 4월 25일 재테스트 예정.",
+      "classification": "테스트 결과",
+      "project_candidates": [
+        { "project": "고객관리 시스템", "confidence": 0.93 }
+      ],
+      "action_items": [
+        "이메일 SMTP 오류 원인 파악 및 수정",
+        "4월 25일 재테스트 일정 확인",
+        "전체 API 연동 결과 승인 여부 회신"
+      ],
+      "draft_reply_hint": "테스트 결과 수신 확인 및 SMTP 오류 수정 지원 여부 회신."
+    },
+    {
+      "email_file": "mail_022.eml",
+      "summary": "물류관리 시스템 바코드 라벨 표준 확정 안내. GS1-128 바코드 적용, 품목 코드/수량/로트번호 등 포함. QR코드 모바일 확인용 추가. Zebra ZT410 프린터 창고별 2대 배치.",
+      "classification": "표준 확정",
+      "project_candidates": [
+        { "project": "물류관리 시스템", "confidence": 0.92 }
+      ],
+      "action_items": [
+        "바코드 라벨 표준 확정 내용 확인",
+        "창고별 프린터 배치 일정 확인",
+        "ZPL 소프트웨어 설정 준비"
+      ],
+      "draft_reply_hint": "바코드 라벨 표준 확정 수신 확인 및 프린터 배치 일정 협의 회신."
+    },
+    {
+      "email_file": "mail_023.eml",
+      "summary": "보안 인프라 개선에 제로트러스트 아키텍처 도입 검토 요청. VPN 한계 극복 목적. Zscaler, Palo Alto, 국산 솔루션 비교. PoC 5~6월, 최종 선정 7월 예정.",
+      "classification": "검토 요청",
+      "project_candidates": [
+        { "project": "보안 인프라 개선", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "제로트러스트 도입 검토 의견 제출",
+        "PoC 참여 일정 확인 (5~6월)",
+        "솔루션 평가 기준 사전 협의"
+      ],
+      "draft_reply_hint": "제로트러스트 도입 검토 의견 및 PoC 참여 가능 여부 회신."
+    },
+    {
+      "email_file": "mail_024.eml",
+      "summary": "모바일 앱 개발 QA 테스트 케이스 작성 완료 보고. 기능 287개, 회귀 143개, 성능 32개, 보안 25개 총 487개. Appium 자동화 + TestRail 관리 체계. 1차 테스트 5월 1일 시작.",
+      "classification": "완료 보고",
+      "project_candidates": [
+        { "project": "모바일 앱 개발", "confidence": 0.94 }
+      ],
+      "action_items": [
+        "테스트 케이스 검토 참여 (개발팀)",
+        "5월 1일 1차 테스트 실행 준비",
+        "TestRail 계정 발급 확인"
+      ],
+      "draft_reply_hint": "테스트 케이스 작성 완료 수고 격려 및 검토 일정 회신."
+    },
+    {
+      "email_file": "mail_025.eml",
+      "summary": "데이터 분석 플랫폼 ETL 파이프라인 설계 완료 보고. Airflow + Spark 기반, AWS S3 데이터 레이크, Snowflake DW 구성. 1차 파이프라인 6월 30일 완성 목표.",
+      "classification": "완료 보고",
+      "project_candidates": [
+        { "project": "데이터 분석 플랫폼", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "ETL 설계서 검토",
+        "5월 4일 구현 착수 일정 확인",
+        "소스 시스템 담당자와 데이터 추출 협의"
+      ],
+      "draft_reply_hint": "ETL 설계 완료 수신 확인 및 착수 준비 협조 의사 회신."
+    },
+    {
+      "email_file": "mail_026.eml",
+      "summary": "클라우드 마이그레이션 CSP 최종 선정 보고. AWS 선정. 국내 리전, 레퍼런스, 기술 지원, 가격 등에서 최고 평가. 계약 5월 2일, POC 환경 구성 5월 중순 예정.",
+      "classification": "결정 사항 공지",
+      "project_candidates": [
+        { "project": "클라우드 마이그레이션", "confidence": 0.96 }
+      ],
+      "action_items": [
+        "AWS 계약 체결 일정 확인 (5/2)",
+        "POC 환경 구성 계획 확인 (5월 중순)",
+        "AWS SA 연락처 확보"
+      ],
+      "draft_reply_hint": "CSP 선정 결과 수신 확인 및 계약 준비 지원 의사 회신."
+    },
+    {
+      "email_file": "mail_027.eml",
+      "summary": "Proma 개발 AI 분류 모델 정확도 개선 결과. 74.3% → 91.2%로 향상. 학습 데이터 3배 확충, 키워드 가중치 조정, 수동 레이블링 적용. 다음 목표 95% 달성 (6월 말).",
+      "classification": "개선 보고",
+      "project_candidates": [
+        { "project": "Proma 개발", "confidence": 0.97 }
+      ],
+      "action_items": [
+        "AI 정확도 개선 결과 확인",
+        "추가 학습 데이터 수집 지원 방안 협의",
+        "95% 달성 로드맵 검토"
+      ],
+      "draft_reply_hint": "AI 정확도 개선 성과에 대한 격려 및 95% 목표 달성 방안 의견 회신."
+    },
+    {
+      "email_file": "mail_028.eml",
+      "summary": "ERP 구축 2차 개발 착수 보고. 구매/조달, 회계/원가, 인사/급여 모듈 착수. 개발팀 8명, 컨설턴트 3명 투입. 8월 31일 완료, 7월 1일 중간 점검 예정.",
+      "classification": "착수 보고",
+      "project_candidates": [
+        { "project": "ERP 구축", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "2차 개발 착수 확인",
+        "7월 1일 중간 점검 회의 일정 캘린더 등록",
+        "인사/급여 모듈 관련 인사팀 협조 요청"
+      ],
+      "draft_reply_hint": "2차 개발 착수 수신 확인 및 지원 사항 문의 회신."
+    },
+    {
+      "email_file": "mail_029.eml",
+      "summary": "MES 개선 설비 연동 테스트 완료 보고. CNC 12대, 사출성형기 8대 연동 테스트 완료. 가동 현황 및 알람 정상, 2대 생산 카운터 오류 수정 완료. 5월 20일 시범 운영 시작.",
+      "classification": "완료 보고",
+      "project_candidates": [
+        { "project": "MES 개선", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "설비 연동 테스트 결과 확인",
+        "5월 20일~6월 10일 시범 운영 일정 캘린더 등록",
+        "수정 완료된 생산 카운터 2대 재확인"
+      ],
+      "draft_reply_hint": "설비 연동 테스트 완료 수고 격려 및 시범 운영 준비 확인 회신."
+    },
+    {
+      "email_file": "mail_030.eml",
+      "summary": "전자결재 시스템 모바일 전자서명 기능 추가 확정. 공인인증서 및 생체인증 포함. 5월 15일~6월 30일 개발, 추가 비용 2,500만원. 계약 변경 5월 15일까지 완료 예정.",
+      "classification": "결정 사항 공지",
+      "project_candidates": [
+        { "project": "전자결재 시스템", "confidence": 0.95 }
+      ],
+      "action_items": [
+        "계약 변경 서류 검토 및 서명 (5/15까지)",
+        "추가 예산 2,500만원 승인 절차 진행",
+        "5월 15일 개발 착수 준비 확인"
+      ],
+      "draft_reply_hint": "모바일 서명 기능 추가 확정 수신 확인 및 계약 변경 서류 검토 일정 회신."
+    }
+  ]
+}

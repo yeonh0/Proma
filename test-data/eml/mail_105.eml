@@ -1,0 +1,43 @@
+From: 윤하늘 <haneul.yoon@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 그룹웨어 개선 배포 완료 안내
+Date: Tue, 15 May 2026 10:00:00 +0900
+Message-ID: <mail105@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="alt_boundary_105"
+
+--alt_boundary_105
+Content-Type: text/plain; charset=UTF-8
+
+그룹웨어 개선 버전 배포가 완료되었습니다.
+
+주요 개선 사항:
+- 이메일 로딩 속도 70% 향상
+- 모바일 앱 UI 개선
+- 화상회의 Webex 연동
+- 캘린더 공유 기능 추가
+
+접속 URL: https://groupware.company.kr
+문의: IT 헬프데스크 (내선 9999)
+
+--alt_boundary_105
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial, sans-serif;">
+<h2 style="color: #27ae60;">그룹웨어 개선 버전 배포 완료</h2>
+<p>그룹웨어 개선 버전 배포가 완료되었습니다.</p>
+<h3>주요 개선 사항</h3>
+<ul>
+  <li>✅ 이메일 로딩 속도 70% 향상</li>
+  <li>✅ 모바일 앱 UI 개선</li>
+  <li>✅ 화상회의 Webex 연동</li>
+  <li>✅ 캘린더 공유 기능 추가</li>
+</ul>
+<p><a href="https://groupware.company.kr" style="color: #3498db;">그룹웨어 접속하기</a></p>
+<p>문의: IT 헬프데스크 (내선 9999)</p>
+</body>
+</html>
+
+--alt_boundary_105--

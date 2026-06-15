@@ -1,0 +1,19 @@
+From: 한승우 <seungwoo.han@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 품질관리 통계적 공정 관리 도입 계획
+Date: Sun, 13 Mar 2026 14:00:00 +0900
+Message-ID: <mail039@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+품질관리 시스템에 SPC(통계적 공정 관리) 도입 계획을 공유드립니다.
+
+도입 범위:
+- 주요 공정 15개 적용
+- 관리도 종류: X-bar R, X-bar S, P관리도
+- 실시간 모니터링 대시보드
+
+기대 효과:
+- 공정 이상 조기 감지
+- 불량 사전 예방
+- 품질 데이터 축적

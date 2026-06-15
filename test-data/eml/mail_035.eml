@@ -1,0 +1,19 @@
+From: 이서연 <seoyeon.lee@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: MES 생산 관리 현황 분석
+Date: Fri, 04 Mar 2026 10:00:00 +0900
+Message-ID: <mail035@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+현행 MES 시스템의 생산 관리 현황을 분석한 결과를 보고드립니다.
+
+주요 분석 결과:
+- 설비 가동률: 평균 68.3% (목표 85%)
+- OEE: 52.1% (업계 평균 65%)
+- 불량률: 2.8% (목표 1.5%)
+
+MES 개선을 통한 목표:
+- 설비 가동률 80% 달성
+- OEE 60% 이상
+- 불량률 2% 미만

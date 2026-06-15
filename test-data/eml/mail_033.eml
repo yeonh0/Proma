@@ -1,0 +1,20 @@
+From: 배수진 <sujin.bae@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 클라우드 마이그레이션 1단계 환경 구성 완료
+Date: Wed, 16 May 2026 09:00:00 +0900
+Message-ID: <mail033@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+클라우드 마이그레이션 1단계 AWS 환경 구성이 완료되었습니다.
+
+구성 완료 항목:
+- VPC 및 서브넷 설계/구성
+- IAM 계정 및 권한 체계
+- 기본 보안 그룹 설정
+- 개발/테스트 환경 서버 배포
+
+다음 단계: 개발 환경 마이그레이션 (5월 25일 예정)
+운영 환경 이전: 8월 예정
+
+상세 아키텍처 도식은 컨플루언스 참고 바랍니다.

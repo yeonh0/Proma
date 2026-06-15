@@ -1,0 +1,20 @@
+From: 장소희 <sohee.jang@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 모바일 앱 개발 QA 테스트 케이스 작성 완료
+Date: Thu, 24 Apr 2026 14:00:00 +0900
+Message-ID: <mail024@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+모바일 앱 개발 QA 테스트 케이스 작성이 완료되었습니다.
+
+작성 현황:
+- 기능 테스트: 287개
+- 회귀 테스트: 143개
+- 성능 테스트: 32개
+- 보안 테스트: 25개
+
+테스트 도구: Appium (자동화), TestRail (관리)
+1차 테스트 실행: 5월 1일 예정
+
+테스트 케이스 검토에 개발팀 참여 부탁드립니다.

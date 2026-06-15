@@ -1,0 +1,19 @@
+From: 박지훈 <jihoon.park@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 전자결재 시스템 모바일 서명 기능 추가
+Date: Thu, 10 May 2026 09:00:00 +0900
+Message-ID: <mail030@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+전자결재 시스템에 모바일 전자서명 기능 추가가 확정되었습니다.
+
+추가 기능:
+- 공인인증서 기반 전자서명
+- 생체인증 (지문/Face ID) 연동
+- 결재선 모바일 변경 기능
+
+개발 일정: 5월 15일~6월 30일
+추가 개발비: 약 2,500만원
+
+계약 변경은 5월 15일까지 완료 예정입니다.

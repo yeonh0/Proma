@@ -1,0 +1,18 @@
+From: 홍길동 <gildong.hong@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 데이터 분석 플랫폼 BI 도구 선정
+Date: Wed, 02 Apr 2026 14:00:00 +0900
+Message-ID: <mail046@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+데이터 분석 플랫폼 BI(Business Intelligence) 도구 최종 선정 결과입니다.
+
+선정: Tableau Server + Power BI 이중 도입
+
+사용 목적 구분:
+- Tableau: 경영진용 대시보드, 복잡한 시각화
+- Power BI: 팀별 자율 분석, Office 365 연동
+
+라이선스 비용: 연간 약 4,200만원
+구축 완료 목표: 7월 31일
