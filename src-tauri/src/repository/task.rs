@@ -43,6 +43,16 @@ pub fn list_by_project(conn: &Connection, project_id: i64) -> rusqlite::Result<V
     rows.collect()
 }
 
+pub fn list_all(conn: &Connection) -> rusqlite::Result<Vec<Task>> {
+    let sql = format!(
+        "SELECT {SELECT_COLS} FROM tasks
+         ORDER BY due_date ASC NULLS LAST, created_at ASC"
+    );
+    let mut stmt = conn.prepare(&sql)?;
+    let rows = stmt.query_map([], map_row)?;
+    rows.collect()
+}
+
 pub fn get(conn: &Connection, id: i64) -> rusqlite::Result<Option<Task>> {
     let sql = format!("SELECT {SELECT_COLS} FROM tasks WHERE id = ?1");
     let mut stmt = conn.prepare(&sql)?;

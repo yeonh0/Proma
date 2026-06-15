@@ -1,2 +1,2 @@
+pub mod ai;
 pub mod email_parser;
-pub mod ollama_client;

@@ -33,3 +33,9 @@ pub fn task_delete(state: State<AppState>, id: i64) -> Result<bool, String> {
     let db = state.db.lock().map_err(|e| e.to_string())?;
     repo::delete(db.connection(), id).map_err(|e| e.to_string())
 }
+
+#[tauri::command]
+pub fn task_list_all(state: State<AppState>) -> Result<Vec<Task>, String> {
+    let db = state.db.lock().map_err(|e| e.to_string())?;
+    repo::list_all(db.connection()).map_err(|e| e.to_string())
+}

@@ -6,7 +6,7 @@ export const taskApi = {
     invokeCommand<Task>('task_create', { req }),
 
   list: (projectId: number) =>
-    invokeCommand<Task[]>('task_list', { projectId }),
+    invokeCommand<Task[]>('task_list', { project_id: projectId }),
 
   get: (id: number) =>
     invokeCommand<Task | null>('task_get', { id }),
@@ -16,4 +16,7 @@ export const taskApi = {
 
   delete: (id: number) =>
     invokeCommand<boolean>('task_delete', { id }),
+
+  listAll: () =>
+    invokeCommand<Task[]>('task_list_all'),
 };

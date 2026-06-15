@@ -3,7 +3,7 @@ import type { Email, EmailWithMeta, EmailProjectMapping } from './types';
 
 export const emailApi = {
   import: (filePath: string) =>
-    invokeCommand<Email>('email_import', { filePath }),
+    invokeCommand<Email>('email_import', { file_path: filePath }),
 
   list: () =>
     invokeCommand<Email[]>('email_list'),
@@ -15,11 +15,11 @@ export const emailApi = {
     invokeCommand<boolean>('email_delete', { id }),
 
   linkProject: (emailId: number, projectId: number) =>
-    invokeCommand<EmailProjectMapping>('email_link_project', { emailId, projectId }),
+    invokeCommand<EmailProjectMapping>('email_link_project', { email_id: emailId, project_id: projectId }),
 
   unlinkProject: (emailId: number, projectId: number) =>
-    invokeCommand<boolean>('email_unlink_project', { emailId, projectId }),
+    invokeCommand<boolean>('email_unlink_project', { email_id: emailId, project_id: projectId }),
 
   listProjectIds: (emailId: number) =>
-    invokeCommand<number[]>('email_list_project_ids', { emailId }),
+    invokeCommand<number[]>('email_list_project_ids', { email_id: emailId }),
 };
