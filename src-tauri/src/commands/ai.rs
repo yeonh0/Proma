@@ -56,7 +56,7 @@ pub async fn email_analyze(
     let body_for_ai = body.clone();
     let analysis_type_clone = analysis_type.clone();
 
-    let response_content = tokio::task::spawn_blocking(move || {
+    let response_content = tauri::async_runtime::spawn_blocking(move || {
         let provider = AiProviderFactory::from_settings(
             &settings.ai_provider,
             &settings.ollama_base_url,
