@@ -16,4 +16,7 @@ export const taskApi = {
 
   delete: (id: number) =>
     invokeCommand<boolean>('task_delete', { id }),
+
+  listAll: () =>
+    invokeCommand<Task[]>('task_list_all'),
 };

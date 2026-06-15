@@ -1003,7 +1003,7 @@ body {
 
 .dash-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   margin-top: 20px;
   margin-bottom: 28px;
@@ -1143,6 +1143,16 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.dash-task-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dash-task-dot--in_progress { background: #f59e0b; }
+.dash-task-dot--todo        { background: #d1d5db; }
 
 /* ─── 설정 페이지 ─────────────────────────── */
 

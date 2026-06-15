@@ -46,6 +46,7 @@ pub fn run() {
             commands::project::project_delete,
             commands::task::task_create,
             commands::task::task_list,
+            commands::task::task_list_all,
             commands::task::task_get,
             commands::task::task_update,
             commands::task::task_delete,

@@ -3,14 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import { projectApi } from '../features/project/api';
 import { scheduleApi } from '../features/schedule/api';
 import { emailApi } from '../features/email/api';
+import { taskApi } from '../features/task/api';
 import type { Project } from '../features/project/types';
 import type { Schedule } from '../features/schedule/types';
 import type { Email } from '../features/email/types';
+import type { Task } from '../features/task/types';
 
 function getThisWeekRange(): [Date, Date] {
   const now = new Date();
   const day = now.getDay();
-  const diff = day === 0 ? -6 : 1 - day; // Monday as week start
+  const diff = day === 0 ? -6 : 1 - day;
   const start = new Date(now);
   start.setDate(now.getDate() + diff);
   start.setHours(0, 0, 0, 0);
@@ -43,11 +45,12 @@ export default function DashboardPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [schedules, setSchedules] = useState<Schedule[]>([]);
   const [emails, setEmails] = useState<Email[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Promise.all([projectApi.list(), scheduleApi.list(), emailApi.list()])
-      .then(([p, s, e]) => { setProjects(p); setSchedules(s); setEmails(e); })
+    Promise.all([projectApi.list(), scheduleApi.list(), emailApi.list(), taskApi.listAll()])
+      .then(([p, s, e, t]) => { setProjects(p); setSchedules(s); setEmails(e); setTasks(t); })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
@@ -60,6 +63,20 @@ export default function DashboardPage() {
 
   const active = projects.filter((p) => p.status === 'active');
   const recentEmails = emails.slice(0, 5);
+
+  const incompleteTasks = tasks
+    .filter((t) => t.status !== 'done')
+    .sort((a, b) => {
+      if (a.status === 'in_progress' && b.status !== 'in_progress') return -1;
+      if (b.status === 'in_progress' && a.status !== 'in_progress') return 1;
+      if (a.due_date && b.due_date) return a.due_date.localeCompare(b.due_date);
+      if (a.due_date) return -1;
+      if (b.due_date) return 1;
+      return 0;
+    })
+    .slice(0, 7);
+
+  const projectMap = new Map(projects.map((p) => [p.id, p.title]));
 
   if (loading) return <div className="page"><p className="state-message">불러오는 중…</p></div>;
 
@@ -77,6 +94,13 @@ export default function DashboardPage() {
           </span>
         </div>
         <div className="stat-card">
+          <span className="stat-value">{tasks.filter((t) => t.status !== 'done').length}</span>
+          <span className="stat-label">미완료 Task</span>
+          <span className="stat-sub">
+            진행 중 {tasks.filter((t) => t.status === 'in_progress').length}개
+          </span>
+        </div>
+        <div className="stat-card">
           <span className="stat-value">{thisWeek.length}</span>
           <span className="stat-label">이번 주 일정</span>
           <span className="stat-sub">전체 {schedules.length}개</span>
@@ -84,11 +108,28 @@ export default function DashboardPage() {
         <div className="stat-card">
           <span className="stat-value">{emails.length}</span>
           <span className="stat-label">이메일</span>
-          <span className="stat-sub">
-            최근 수신: {fmtDate(emails[0]?.sent_at ?? null)}
-          </span>
+          <span className="stat-sub">최근 수신: {fmtDate(emails[0]?.sent_at ?? null)}</span>
         </div>
       </div>
+
+      {/* 미완료 Task */}
+      <section className="dash-section">
+        <div className="dash-section-title">미완료 Task</div>
+        {incompleteTasks.length === 0
+          ? <p className="dash-empty">모든 Task가 완료됐습니다.</p>
+          : (
+            <ul className="dash-list">
+              {incompleteTasks.map((t) => (
+                <li key={t.id} className="dash-item dash-item--clickable" onClick={() => navigate(`/projects/${t.project_id}`)}>
+                  <span className={`dash-task-dot dash-task-dot--${t.status}`} />
+                  <span className="dash-item-title">{t.title}</span>
+                  <span className="dash-item-due">{projectMap.get(t.project_id) ?? ''}</span>
+                  {t.due_date && <span className="dash-item-due">· {t.due_date}</span>}
+                </li>
+              ))}
+            </ul>
+          )}
+      </section>
 
       {/* 이번 주 일정 */}
       <section className="dash-section">
