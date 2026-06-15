@@ -773,6 +773,71 @@ body {
   padding: 4px 0;
 }
 
+/* ─── 이메일 AI 분석 ──────────────────────── */
+
+.email-ai-section {
+  margin-top: 16px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 14px;
+}
+
+.email-ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.email-ai-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.email-ai-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.email-ai-results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.email-ai-result {
+  background: #f6f7f9;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.email-ai-result-type {
+  font-size: 11px;
+  font-weight: 600;
+  color: #4f6ef7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.email-ai-result-content {
+  font-size: 13px;
+  color: #222;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.email-ai-result-meta {
+  font-size: 11px;
+  color: #bbb;
+  margin-top: 8px;
+}
+
 .email-project-links {
   margin-top: 16px;
 }

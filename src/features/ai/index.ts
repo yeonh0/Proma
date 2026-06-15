@@ -1,1 +1,2 @@
-// TODO: Phase 4 — AI 분석 기능 export
+export { aiApi } from './api';
+export type { AiResult, AnalysisType } from './types';

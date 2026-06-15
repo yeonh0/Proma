@@ -23,6 +23,14 @@ pub const MIGRATIONS: &[Migration] = &[
             "../../migrations/V002_add_ai_settings.rollback.sql"
         )),
     },
+    Migration {
+        version: 3,
+        description: "add_draft_reply",
+        up: include_str!("../../migrations/V003_add_draft_reply.sql"),
+        down: Some(include_str!(
+            "../../migrations/V003_add_draft_reply.rollback.sql"
+        )),
+    },
 ];
 
 pub struct MigrationRunner;

@@ -64,6 +64,8 @@ pub fn run() {
             commands::settings::settings_get,
             commands::settings::settings_set,
             commands::settings::settings_get_all,
+            commands::ai::email_analyze,
+            commands::ai::email_list_ai_results,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

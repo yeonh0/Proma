@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { emailApi } from '../features/email/api';
 import { projectApi } from '../features/project/api';
+import { aiApi } from '../features/ai';
 import type { EmailWithMeta } from '../features/email/types';
 import type { Project } from '../features/project/types';
+import type { AiResult, AnalysisType } from '../features/ai';
 
 function formatDate(iso: string | null) {
   if (!iso) return '—';
@@ -24,6 +26,18 @@ function formatSize(bytes: number | null) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 }
 
+const ANALYSIS_LABELS: Record<AnalysisType, string> = {
+  summary: '요약',
+  classification: '분류',
+  draft_reply: '답장 초안',
+};
+
+const RESULT_TYPE_LABELS: Record<string, string> = {
+  summary: '요약',
+  classification: '분류',
+  draft_reply: '답장 초안',
+};
+
 export default function EmailDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -37,20 +51,30 @@ export default function EmailDetailPage() {
   const [allProjects, setAllProjects] = useState<Project[]>([]);
   const [linkProjectId, setLinkProjectId] = useState('');
 
+  const [aiResults, setAiResults] = useState<AiResult[]>([]);
+  const [aiLoading, setAiLoading] = useState<AnalysisType | null>(null);
+  const [aiError, setAiError] = useState<string | null>(null);
+
   const load = () => {
     setLoading(true);
     emailApi.get(emailId)
       .then((d) => {
         if (!d) { setError('이메일을 찾을 수 없습니다.'); return; }
         setData(d);
-        return d.project_ids;
       })
       .catch((e) => setError(String(e)))
       .finally(() => setLoading(false));
   };
 
+  const loadAiResults = () => {
+    aiApi.emailListResults(emailId)
+      .then(setAiResults)
+      .catch(() => {});
+  };
+
   useEffect(() => {
     load();
+    loadAiResults();
     projectApi.list().then(setAllProjects).catch(() => {});
   }, [emailId]);
 
@@ -91,6 +115,25 @@ export default function EmailDetailPage() {
       alert(String(e));
     }
   };
+
+  const handleAnalyze = async (type: AnalysisType) => {
+    setAiLoading(type);
+    setAiError(null);
+    try {
+      await aiApi.emailAnalyze(emailId, type);
+      loadAiResults();
+    } catch (e) {
+      setAiError(String(e));
+    } finally {
+      setAiLoading(null);
+    }
+  };
+
+  // 각 result_type의 최신 결과만 표시 (DESC 정렬이므로 첫 번째가 최신)
+  const latestResults = aiResults.reduce<AiResult[]>((acc, r) => {
+    if (!acc.find((x) => x.result_type === r.result_type)) acc.push(r);
+    return acc;
+  }, []);
 
   if (loading) return <div className="page"><p className="state-message">불러오는 중…</p></div>;
   if (error || !data) return <div className="page"><p className="state-message state-error">{error ?? '오류'}</p></div>;
@@ -134,6 +177,44 @@ export default function EmailDetailPage() {
             ))}
           </div>
         )}
+
+        {/* AI 분석 */}
+        <div className="email-ai-section">
+          <div className="email-ai-header">
+            <span className="email-ai-title">AI 분석</span>
+            <div className="email-ai-actions">
+              {(['summary', 'classification', 'draft_reply'] as AnalysisType[]).map((type) => (
+                <button
+                  key={type}
+                  className="btn btn-secondary"
+                  style={{ fontSize: 12, padding: '5px 10px' }}
+                  onClick={() => handleAnalyze(type)}
+                  disabled={aiLoading !== null}
+                >
+                  {aiLoading === type ? '분석 중…' : ANALYSIS_LABELS[type]}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {aiError && <p className="form-error" style={{ marginTop: 8 }}>{aiError}</p>}
+
+          {latestResults.length > 0 && (
+            <div className="email-ai-results">
+              {latestResults.map((r) => (
+                <div key={r.id} className="email-ai-result">
+                  <div className="email-ai-result-type">
+                    {RESULT_TYPE_LABELS[r.result_type] ?? r.result_type}
+                  </div>
+                  <div className="email-ai-result-content">{r.result}</div>
+                  <div className="email-ai-result-meta">
+                    {r.model_name} · {formatDate(r.created_at)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
         <div className="email-project-links">
           <div className="email-project-links-title">연결된 프로젝트</div>
