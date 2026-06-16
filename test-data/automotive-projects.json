@@ -1,0 +1,69 @@
+{
+  "projects": [
+    {
+      "name": "아반떼 CN7",
+      "description": "아반떼 CN7 페이스리프트 개발 프로젝트",
+      "status": "active",
+      "priority": "high",
+      "tasks": [
+        { "title": "1.6 GDi 엔진 내구성 검증", "status": "in_progress" },
+        { "title": "DCT 변속기 진동 개선", "status": "todo" },
+        { "title": "전방 충돌 방지 보조(FCA) 캘리브레이션", "status": "todo" },
+        { "title": "실내 소음 저감 패키지 적용", "status": "in_progress" },
+        { "title": "헤드램프 DRL 패턴 변경 승인", "status": "done" }
+      ]
+    },
+    {
+      "name": "쏘나타 DN8",
+      "description": "쏘나타 DN8 연식 변경 및 하이브리드 라인업 확대",
+      "status": "active",
+      "priority": "high",
+      "tasks": [
+        { "title": "2.0 HEV 배터리 열관리 시스템 검토", "status": "in_progress" },
+        { "title": "능동형 노이즈 컨트롤(ANC) 튜닝", "status": "todo" },
+        { "title": "파노라믹 선루프 누수 재현 테스트", "status": "in_progress" },
+        { "title": "12.3인치 클러스터 소프트웨어 업데이트", "status": "todo" },
+        { "title": "리어 서스펜션 세팅 최종 승인", "status": "done" }
+      ]
+    },
+    {
+      "name": "투싼 NX4",
+      "description": "투싼 NX4 오프로드 패키지 및 N Line 개발",
+      "status": "active",
+      "priority": "medium",
+      "tasks": [
+        { "title": "HTRAC AWD 제어로직 최적화", "status": "in_progress" },
+        { "title": "하체 보호 스키드 플레이트 적용", "status": "todo" },
+        { "title": "N Line 전용 서스펜션 세팅 확정", "status": "todo" },
+        { "title": "오프로드 주행 모드 UI 검토", "status": "todo" },
+        { "title": "견인 후크 강도 시험", "status": "done" }
+      ]
+    },
+    {
+      "name": "팰리세이드 LX2",
+      "description": "팰리세이드 2026년형 개발 및 품질 개선",
+      "status": "active",
+      "priority": "medium",
+      "tasks": [
+        { "title": "3열 시트 접이 메커니즘 내구 시험", "status": "in_progress" },
+        { "title": "3.5 T-GDi 엔진 오일 소비 원인 분석", "status": "in_progress" },
+        { "title": "후측방 모니터(BVM) 화질 개선", "status": "todo" },
+        { "title": "7인승 / 8인승 시트 배치 검토", "status": "done" },
+        { "title": "루프랙 하중 기준 재정립", "status": "todo" }
+      ]
+    },
+    {
+      "name": "아이오닉5 NE",
+      "description": "아이오닉5 배터리 2세대 및 V2L 확장 기능 개발",
+      "status": "active",
+      "priority": "high",
+      "tasks": [
+        { "title": "84kWh 배터리 팩 열폭주 시험", "status": "in_progress" },
+        { "title": "800V 초급속 충전 안정성 검증", "status": "in_progress" },
+        { "title": "V2L 출력 3.6kW → 5.0kW 업그레이드 검토", "status": "todo" },
+        { "title": "원페달 드라이빙 응답성 튜닝", "status": "todo" },
+        { "title": "리어 모터 소음 재현 및 원인 분석", "status": "in_progress" }
+      ]
+    }
+  ]
+}
