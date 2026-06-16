@@ -1,0 +1,16 @@
+From: 이서연 <seoyeon.lee@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: MES 개선 인터페이스 설계서 검토 의견
+Date: Tue, 08 Apr 2026 10:00:00 +0900
+Message-ID: <mail017@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+MES 개선 프로젝트 인터페이스 설계서에 대한 검토 의견을 회신드립니다.
+
+수정 요청 사항:
+1. PLC 통신 프로토콜: OPC-UA 우선 적용 (현재 Modbus 설계)
+2. 데이터 수집 주기: 1초 → 500ms 단축 요청
+3. 알람 처리 우선순위 체계 추가 필요
+
+수정된 설계서는 4월 15일까지 제출 부탁드립니다.

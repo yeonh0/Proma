@@ -1,0 +1,27 @@
+From: 최유진 <yujin.choi@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: Data Analytics Platform - BI Tool Evaluation Summary
+Date: Thu, 17 Apr 2026 09:00:00 +0900
+Message-ID: <mail092@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Team,
+
+Here is the summary of our BI tool evaluation for the Data Analytics Platform project.
+
+Evaluation criteria:
+- Functionality (30%)
+- Performance (25%)
+- Ease of use (25%)
+- Total cost of ownership (20%)
+
+Results:
+1. Tableau: Score 87/100
+2. Power BI: Score 82/100
+3. Looker: Score 79/100
+
+Recommendation: Tableau for executive dashboards, Power BI for self-service.
+
+Regards,
+Yujin Choi

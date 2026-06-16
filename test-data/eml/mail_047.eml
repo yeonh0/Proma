@@ -1,0 +1,18 @@
+From: 배수진 <sujin.bae@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 클라우드 마이그레이션 보안 아키텍처 설계
+Date: Mon, 07 Apr 2026 10:00:00 +0900
+Message-ID: <mail047@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+클라우드 마이그레이션을 위한 보안 아키텍처 설계안을 공유드립니다.
+
+보안 구성 요소:
+- WAF (AWS WAF)
+- DDoS 방어 (AWS Shield)
+- 암호화 (AWS KMS)
+- 접근 제어 (AWS IAM + SSO)
+- 감사 로그 (CloudTrail + CloudWatch)
+
+보안 검토는 정보보안팀과 협의하여 4월 20일까지 완료 예정입니다.

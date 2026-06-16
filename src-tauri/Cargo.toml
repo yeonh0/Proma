@@ -21,6 +21,6 @@ serde_json = "1"
 rusqlite = { version = "0.32", features = ["bundled"] }
 mailparse = "0.15"
 base64 = "0.22"
-reqwest = { version = "0.13", features = ["blocking", "json"] }
+ureq = { version = "2", features = ["json"] }
 
 

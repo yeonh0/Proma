@@ -1,0 +1,17 @@
+From: 윤하늘 <haneul.yoon@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 보안 인프라 개선 취약점 점검 결과
+Date: Thu, 24 Mar 2026 14:00:00 +0900
+Message-ID: <mail011@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+보안 인프라 개선 프로젝트 관련 외부 취약점 점검 결과를 보고드립니다.
+
+주요 취약점 (긴급):
+1. 내부망 방화벽 정책 미흡 (CVE-2025-1234)
+2. SSL 인증서 만료 임박 (3개 서버)
+3. 관리자 계정 패스워드 정책 미적용
+
+즉시 조치 필요 사항은 이번 주 내로 처리하겠습니다.
+전체 보고서는 첨부 파일을 확인해 주세요.

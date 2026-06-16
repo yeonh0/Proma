@@ -1,0 +1,23 @@
+From: 한승우 <seungwoo.han@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 클라우드 마이그레이션 아키텍처 설계서 첨부
+Date: Wed, 09 Apr 2026 14:00:00 +0900
+Message-ID: <mail084@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_mail084"
+
+--boundary_mail084
+Content-Type: text/plain; charset=UTF-8
+
+AWS 클라우드 마이그레이션 아키텍처 설계서를 첨부합니다.
+
+--boundary_mail084
+Content-Type: application/pdf; name="클라우드_아키텍처.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="클라우드_아키텍처.pdf"
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyA+PgplbmRvYmoKeHJlZgowIDEKMDAw
+MDAwMDAwMCA2NTUzNSBmCnRyYWlsZXIKPDwgL1Jvb3QgMSAwIFIgPj4Kc3RhcnR4cmVmCjkKJSVF
+T0Y=
+
+--boundary_mail084--

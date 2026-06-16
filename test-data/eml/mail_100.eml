@@ -1,0 +1,24 @@
+From: System <noreply@monitoring.company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: [모니터링 알림] 서버 CPU 사용률 임계치 초과
+Date: Sat, 05 May 2026 07:00:00 +0900
+Message-ID: <mail100@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Auto-Response-Suppress: All
+Precedence: bulk
+
+이 메일은 인프라 모니터링 시스템에서 자동 발송되었습니다.
+
+[경고] 서버 CPU 사용률 임계치 초과
+
+발생 시각: 2026-05-05 07:00:00
+대상 서버: web-prod-01 (10.10.1.101)
+현재 CPU: 92% (임계치: 85%)
+지속 시간: 15분
+
+확인 후 조치 바랍니다.
+
+모니터링 대시보드: http://monitoring.company.kr
+
+본 메일은 자동 발송입니다. 회신하지 마세요.

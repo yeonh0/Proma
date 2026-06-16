@@ -1,0 +1,400 @@
+{
+  "schedules": [
+    {
+      "title": "ERP 구축 주간 회의",
+      "description": "ERP 구축 프로젝트 주간 진행 현황 점검 및 이슈 공유",
+      "scheduled_at": "2026-05-04T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": true,
+      "recurrence_rule": "FREQ=WEEKLY;BYDAY=MO",
+      "project_title": "ERP 구축"
+    },
+    {
+      "title": "ERP 2차 개발 착수 회의",
+      "description": "구매/조달, 회계/원가, 인사/급여 모듈 2차 개발 착수 보고 및 계획 검토",
+      "scheduled_at": "2026-05-06T14:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "ERP 구축"
+    },
+    {
+      "title": "ERP 기준 정보 완성도 점검",
+      "description": "품목 마스터, BOM, 공정 마스터 등록 완성도 점검 및 독촉",
+      "scheduled_at": "2026-05-08T11:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "ERP 구축"
+    },
+    {
+      "title": "ERP 구축 월간 보고",
+      "description": "경영진 대상 ERP 구축 프로젝트 월간 진행 보고",
+      "scheduled_at": "2026-06-05T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": true,
+      "recurrence_rule": "FREQ=MONTHLY;BYDAY=1FR",
+      "project_title": "ERP 구축"
+    },
+    {
+      "title": "MES 개선 시범 운영 점검",
+      "description": "안산 2공장 MES 개선 시범 운영 현황 점검 및 이슈 해결",
+      "scheduled_at": "2026-05-20T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "MES 개선"
+    },
+    {
+      "title": "MES 설비 추가 연동 회의",
+      "description": "평택 공장 신규 설비 MES 연동 범위 및 일정 협의",
+      "scheduled_at": "2026-05-27T14:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "MES 개선"
+    },
+    {
+      "title": "MES 전사 확대 계획 검토",
+      "description": "안산 공장 안정화 후 전사 확대 적용 계획 수립 회의",
+      "scheduled_at": "2026-06-17T10:00:00",
+      "duration_minutes": 120,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "MES 개선"
+    },
+    {
+      "title": "전자결재 모바일 서명 중간 점검",
+      "description": "공인인증서 및 생체인증 모바일 서명 개발 중간 점검",
+      "scheduled_at": "2026-05-29T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "전자결재 시스템"
+    },
+    {
+      "title": "전자결재 모바일 서명 완료 보고",
+      "description": "모바일 전자서명 기능 개발 완료 보고 및 테스트 계획",
+      "scheduled_at": "2026-06-30T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "전자결재 시스템"
+    },
+    {
+      "title": "전자결재 전사 배포 준비 회의",
+      "description": "교육 자료 준비, 배포 일정, 헬프데스크 지원 방안 협의",
+      "scheduled_at": "2026-07-07T10:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "전자결재 시스템"
+    },
+    {
+      "title": "생산관리 실적 집계 모듈 리뷰",
+      "description": "생산 실적 입력 및 자동 카운터 연동 개발 진행 상황 리뷰",
+      "scheduled_at": "2026-05-13T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "생산관리 시스템"
+    },
+    {
+      "title": "생산관리 ERP 연동 설계 회의",
+      "description": "생산관리 시스템과 ERP 구매/재고 모듈 연동 방안 협의",
+      "scheduled_at": "2026-06-03T14:00:00",
+      "duration_minutes": 120,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "생산관리 시스템"
+    },
+    {
+      "title": "그룹웨어 이메일 보안 점검",
+      "description": "S/MIME, SPF/DKIM/DMARC 적용 현황 및 스팸 필터 성능 점검",
+      "scheduled_at": "2026-05-19T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "그룹웨어 개선"
+    },
+    {
+      "title": "그룹웨어 전사 배포 일정 확정",
+      "description": "전 직원 배포 일정, 교육 계획, 롤백 방안 확정",
+      "scheduled_at": "2026-06-24T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "그룹웨어 개선"
+    },
+    {
+      "title": "그룹웨어 배포 후 모니터링",
+      "description": "전사 배포 후 1주일 안정화 모니터링 결과 공유",
+      "scheduled_at": "2026-08-07T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "그룹웨어 개선"
+    },
+    {
+      "title": "품질관리 검사 기준서 확정 회의",
+      "description": "공장별 현장 의견 취합 후 통합 검사 기준서 최종 확정",
+      "scheduled_at": "2026-05-12T10:00:00",
+      "duration_minutes": 120,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "품질관리 시스템"
+    },
+    {
+      "title": "품질관리 검사 모듈 개발 킥오프",
+      "description": "입고/공정/출하 검사 모듈 개발 착수 회의",
+      "scheduled_at": "2026-05-18T14:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "품질관리 시스템"
+    },
+    {
+      "title": "품질관리 주간 개발 스크럼",
+      "description": "품질관리 시스템 개발팀 주간 스크럼 미팅",
+      "scheduled_at": "2026-05-07T09:30:00",
+      "duration_minutes": 30,
+      "is_recurring": true,
+      "recurrence_rule": "FREQ=WEEKLY;BYDAY=TH",
+      "project_title": "품질관리 시스템"
+    },
+    {
+      "title": "인사관리 데이터 이관 현황 점검",
+      "description": "임직원 정보, 급여 이력 데이터 정제 및 이관 진행 현황 점검",
+      "scheduled_at": "2026-05-11T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "인사관리 시스템"
+    },
+    {
+      "title": "인사관리 급여 계산 검증 미팅",
+      "description": "급여팀과 새 시스템 급여 계산 결과 검증 협의",
+      "scheduled_at": "2026-05-25T10:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "인사관리 시스템"
+    },
+    {
+      "title": "인사관리 성과평가 연동 설계 회의",
+      "description": "성과평가 시스템 API 연동 방안 협의 및 개발 일정 확정",
+      "scheduled_at": "2026-06-10T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "인사관리 시스템"
+    },
+    {
+      "title": "구매관리 전자입찰 중간 리뷰",
+      "description": "전자입찰 기능 개발 중간 리뷰 및 업무팀 의견 수렴",
+      "scheduled_at": "2026-05-22T14:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "구매관리 시스템"
+    },
+    {
+      "title": "구매관리 전자세금계산서 연동 테스트",
+      "description": "홈택스 연동 전자세금계산서 수신 테스트 및 결과 확인",
+      "scheduled_at": "2026-06-08T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "구매관리 시스템"
+    },
+    {
+      "title": "고객관리 API 연동 재테스트",
+      "description": "이메일 발송 SMTP 오류 수정 후 전체 API 연동 재테스트",
+      "scheduled_at": "2026-05-06T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "고객관리 시스템"
+    },
+    {
+      "title": "고객관리 1차 설계 리뷰",
+      "description": "고객 정보 구조, 영업 파이프라인 설계 최종 리뷰",
+      "scheduled_at": "2026-05-20T10:00:00",
+      "duration_minutes": 120,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "고객관리 시스템"
+    },
+    {
+      "title": "보안 인프라 제로트러스트 PoC 중간 점검",
+      "description": "Zscaler, Palo Alto, 국산 솔루션 PoC 현황 점검 및 이슈 공유",
+      "scheduled_at": "2026-05-20T14:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "보안 인프라 개선"
+    },
+    {
+      "title": "보안 인프라 PoC 결과 발표",
+      "description": "경영진 대상 PoC 최종 결과 발표 및 솔루션 선정 결정",
+      "scheduled_at": "2026-06-03T14:00:00",
+      "duration_minutes": 120,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "보안 인프라 개선"
+    },
+    {
+      "title": "보안 인프라 솔루션 계약 미팅",
+      "description": "최종 선정 벤더와 계약 조건 협상 및 계약 체결",
+      "scheduled_at": "2026-07-10T10:00:00",
+      "duration_minutes": 120,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "보안 인프라 개선"
+    },
+    {
+      "title": "데이터 분석 플랫폼 거버넌스 정책 확정",
+      "description": "법무팀, 정보보안팀 협의 완료 후 데이터 거버넌스 정책 최종 확정",
+      "scheduled_at": "2026-05-28T14:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "데이터 분석 플랫폼"
+    },
+    {
+      "title": "데이터 분석 데이터 품질 이슈 해결 점검",
+      "description": "ERP 중복 키, MES 누락 데이터 정제 완료 현황 점검",
+      "scheduled_at": "2026-06-15T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "데이터 분석 플랫폼"
+    },
+    {
+      "title": "데이터 분석 ETL 파이프라인 개발 착수",
+      "description": "Airflow + Spark ETL 파이프라인 개발 착수 및 역할 분담",
+      "scheduled_at": "2026-07-01T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "데이터 분석 플랫폼"
+    },
+    {
+      "title": "Proma 스프린트 3 계획 회의",
+      "description": "AI 답장 초안, 이메일 스레드 시각화 스프린트 3 계획 수립",
+      "scheduled_at": "2026-05-11T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "Proma 개발"
+    },
+    {
+      "title": "Proma AI 정확도 95% 달성 리뷰",
+      "description": "이메일 AI 분류 정확도 95% 목표 달성을 위한 개선 방안 리뷰",
+      "scheduled_at": "2026-06-01T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "Proma 개발"
+    },
+    {
+      "title": "Proma 개발 일일 스탠드업",
+      "description": "Proma 개발팀 일일 진행 상황 공유 (15분)",
+      "scheduled_at": "2026-05-04T09:00:00",
+      "duration_minutes": 15,
+      "is_recurring": true,
+      "recurrence_rule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR",
+      "project_title": "Proma 개발"
+    },
+    {
+      "title": "Proma 스프린트 3 회고",
+      "description": "스프린트 3 완료 후 회고 및 다음 스프린트 준비",
+      "scheduled_at": "2026-06-19T15:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "Proma 개발"
+    },
+    {
+      "title": "전체 프로젝트 PMO 월간 회의",
+      "description": "전체 진행 중 프로젝트 PMO 월간 현황 종합 보고",
+      "scheduled_at": "2026-05-29T14:00:00",
+      "duration_minutes": 120,
+      "is_recurring": true,
+      "recurrence_rule": "FREQ=MONTHLY;BYDAY=-1FR",
+      "project_title": null
+    },
+    {
+      "title": "IT 부서 주간 미팅",
+      "description": "IT 부서 전체 주간 업무 공유 및 이슈 논의",
+      "scheduled_at": "2026-05-05T09:00:00",
+      "duration_minutes": 30,
+      "is_recurring": true,
+      "recurrence_rule": "FREQ=WEEKLY;BYDAY=TU",
+      "project_title": null
+    },
+    {
+      "title": "ERP 2차 중간 점검 회의",
+      "description": "ERP 2차 개발 중간 진행 현황 점검 및 일정 조정",
+      "scheduled_at": "2026-07-01T14:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "ERP 구축"
+    },
+    {
+      "title": "생산관리 ERP 연동 테스트",
+      "description": "생산관리 시스템과 ERP 모듈 연동 테스트 실시",
+      "scheduled_at": "2026-07-15T10:00:00",
+      "duration_minutes": 120,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "생산관리 시스템"
+    },
+    {
+      "title": "보안 인프라 구축 착수 회의",
+      "description": "선정 솔루션 구축 착수 회의 및 구현 일정 확정",
+      "scheduled_at": "2026-07-20T10:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "보안 인프라 개선"
+    },
+    {
+      "title": "데이터 분석 플랫폼 1차 파이프라인 검토",
+      "description": "ETL 파이프라인 1차 개발 완료 후 데이터 적재 결과 검토",
+      "scheduled_at": "2026-07-31T14:00:00",
+      "duration_minutes": 90,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "데이터 분석 플랫폼"
+    },
+    {
+      "title": "인사관리 성과평가 연동 테스트",
+      "description": "성과평가 시스템 API 연동 개발 완료 후 테스트",
+      "scheduled_at": "2026-08-05T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "인사관리 시스템"
+    },
+    {
+      "title": "구매관리 통합 테스트 착수",
+      "description": "개발, QA, 업무팀 통합 테스트 착수 회의 및 역할 분담",
+      "scheduled_at": "2026-08-10T10:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "구매관리 시스템"
+    },
+    {
+      "title": "품질관리 SPC 대시보드 설계 리뷰",
+      "description": "실시간 관리도 대시보드 화면 설계 리뷰",
+      "scheduled_at": "2026-08-12T14:00:00",
+      "duration_minutes": 60,
+      "is_recurring": false,
+      "recurrence_rule": null,
+      "project_title": "품질관리 시스템"
+    }
+  ]
+}

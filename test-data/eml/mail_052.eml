@@ -1,0 +1,20 @@
+From: 최유진 <yujin.choi@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 인사관리 성과 평가 시스템 연동
+Date: Wed, 16 Apr 2026 11:00:00 +0900
+Message-ID: <mail052@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+인사관리 시스템과 성과 평가 시스템 연동 방안을 검토합니다.
+
+연동 정보:
+- 목표 설정 및 진행 현황
+- 역량 평가 결과
+- 360도 다면 평가
+- 성과급 산정 기준 데이터
+
+연동 방식: REST API (JSON)
+연동 주기: 실시간 (이벤트 기반)
+
+성과 평가 시스템 담당팀과 4월 25일 협의 예정

@@ -1,0 +1,31 @@
+From: 강태양 <taeyang.kang@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 인사관리 시스템 급여 계산 테스트 결과 첨부
+Date: Mon, 14 May 2026 14:00:00 +0900
+Message-ID: <mail088@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_mail088"
+
+--boundary_mail088
+Content-Type: text/plain; charset=UTF-8
+
+인사관리 시스템 급여 계산 검증 테스트 결과를 첨부드립니다.
+
+--boundary_mail088
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; name="급여계산_검증결과.xlsx"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="급여계산_검증결과.xlsx"
+
+UEsDBBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAW0NvbnRlbnRfVHlwZXNdLnhtbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+
+--boundary_mail088
+Content-Type: application/pdf; name="검증보고서.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="검증보고서.pdf"
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyA+PgplbmRvYmoKeHJlZgowIDEKMDAw
+MDAwMDAwMCA2NTUzNSBmCnRyYWlsZXIKPDwgL1Jvb3QgMSAwIFIgPj4Kc3RhcnR4cmVmCjkKJSVF
+T0Y=
+
+--boundary_mail088--

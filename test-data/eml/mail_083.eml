@@ -1,0 +1,32 @@
+From: 정수빈 <subin.jung@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 생산관리 시스템 기능 명세서 첨부
+Date: Wed, 02 Apr 2026 11:00:00 +0900
+Message-ID: <mail083@company.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_mail083"
+
+--boundary_mail083
+Content-Type: text/plain; charset=UTF-8
+
+생산관리 시스템 기능 명세서를 첨부드립니다.
+확인 후 개발 착수 부탁드립니다.
+
+--boundary_mail083
+Content-Type: application/pdf; name="생산관리_기능명세서.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="생산관리_기능명세서.pdf"
+
+JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyA+PgplbmRvYmoKeHJlZgowIDEKMDAw
+MDAwMDAwMCA2NTUzNSBmCnRyYWlsZXIKPDwgL1Jvb3QgMSAwIFIgPj4Kc3RhcnR4cmVmCjkKJSVF
+T0Y=
+
+--boundary_mail083
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; name="생산관리_WBS.xlsx"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="생산관리_WBS.xlsx"
+
+UEsDBBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAW0NvbnRlbnRfVHlwZXNdLnhtbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+
+--boundary_mail083--

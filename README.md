@@ -1,8 +1,8 @@
-# proma
+# Proma
 
 **프로젝트 관리 + 이메일 분석 데스크탑 앱**
 
-로컬 AI(Ollama)와 연동하여 이메일을 분석하고, 프로젝트·일정·Task를 통합 관리하는 Windows 데스크탑 애플리케이션입니다. 외부 서버 없이 모든 데이터와 AI 추론을 로컬에서 완결합니다.
+로컬 AI(Ollama) 또는 내부망 AI 서비스와 연동하여 이메일을 분석하고, 프로젝트·일정·Task를 통합 관리하는 Windows 데스크탑 애플리케이션입니다. 모든 데이터는 로컬 SQLite에 저장됩니다.
 
 ---
 
@@ -25,13 +25,16 @@
 - 중복 임포트 방지 (Message-ID 기준)
 - 이메일 ↔ 프로젝트 수동 연결/해제
 
-### 🔲 Phase 4 — AI 분석 (Ollama 연동)
-- 이메일 요약 / 키워드 / 액션 아이템 추출
-- AI 프로젝트 후보 제안 (사용자 확인 후에만 적용)
-- 설정 화면 — Ollama URL / 모델 설정
+### ✅ Phase 4 — AI 분석
+- 이메일 요약 / 분류 / 답장 초안 생성
+- AI 제공자 선택: **Ollama(로컬)** 또는 **내부망 AI 서비스(SSE 스트리밍)**
+- 설정 화면 — AI 제공자 / URL / 요청 헤더 / Workspace ID 설정
+- AI 결과 DB 저장 및 이메일 상세 화면에서 조회
 
-### 🔲 Phase 5 — 대시보드
-- 프로젝트 현황 / 오늘 일정 / 마감 임박 Task / 미확인 AI 결과 위젯
+### ✅ Phase 5 — 대시보드
+- 프로젝트·Task·일정·메일 통계 카드
+- 미완료 Task 섹션 (진행 중 우선 정렬, 최대 7개)
+- 이번 주 일정 / 활성 프로젝트 / 최근 메일
 
 ### 🔲 Phase 6 — 안정화
 - 토스트 알림 / 로딩 처리 / 입력 유효성 검사 / DB 백업
@@ -48,7 +51,11 @@
 | 데이터베이스 | SQLite (`rusqlite` 0.32, bundled) |
 | 이메일 파싱 | `mailparse` 0.15 |
 | 파일 다이얼로그 | `tauri-plugin-dialog` v2 |
-| AI | Ollama (localhost:11434) — Phase 4 예정 |
+| HTTP 클라이언트 | `ureq` 2 (동기 / Tokio 독립) |
+| AI — Ollama | HTTP POST `/api/chat` (로컬, qwen3·llama3 등) |
+| AI — 내부망 | HTTP POST + SSE 스트리밍 (`llm_result.answer` 누적) |
+| 폰트 | NanumSquare (jsDelivr CDN) |
+| 빌드/배포 | GitHub Actions (Windows NSIS/MSI 자동 빌드) |
 
 ---
 
@@ -59,16 +66,17 @@
 │         React + TypeScript (SPA)            │
 │   features / pages / shared                 │
 └──────────────────┬──────────────────────────┘
-                   │ Tauri IPC (invoke)
+                   │ Tauri IPC (invoke, camelCase)
 ┌──────────────────▼──────────────────────────┐
 │         Rust (Tauri v2)                     │
 │  commands → repository → services           │
-└──────┬───────────────────────┬──────────────┘
-       │                       │
-┌──────▼──────┐     ┌──────────▼──────────────┐
-│   SQLite    │     │   Ollama (localhost)     │
-│  data.db    │     │   port 11434  (Phase 4) │
-└─────────────┘     └─────────────────────────┘
+└──────┬───────────────────┬──────────────────┘
+       │                   │
+┌──────▼──────┐   ┌────────▼───────────────────────┐
+│   SQLite    │   │   AI Provider (ureq)            │
+│  data.db    │   │   Ollama (localhost:11434)      │
+└─────────────┘   │   내부망 AI (SSE 스트리밍)       │
+                  └────────────────────────────────┘
 ```
 
 ### 데이터 저장 위치
@@ -86,12 +94,16 @@
 
 ```
 proma/
+├── .github/workflows/
+│   └── build-windows.yml   # GitHub Actions 수동 빌드 (NSIS/MSI 생성)
 ├── src/                        # React 프론트엔드
 │   ├── features/               # 도메인별 기능 모듈
-│   │   ├── project/            # 프로젝트 목록·상세·모달
-│   │   ├── task/               # Task 목록·상태 전환
-│   │   ├── schedule/           # 일정 목록·캘린더·모달
-│   │   └── email/              # 이메일 목록
+│   │   ├── project/
+│   │   ├── task/
+│   │   ├── schedule/
+│   │   ├── email/
+│   │   ├── ai/                 # AI 분석 API + 타입
+│   │   └── settings/           # 설정 API + 타입
 │   ├── pages/                  # 라우트별 페이지 컴포넌트
 │   ├── layouts/                # AppLayout (사이드바 + Outlet)
 │   └── shared/
@@ -105,18 +117,22 @@ proma/
 │   │   ├── commands/           # IPC 커맨드 핸들러
 │   │   ├── models/             # Serde 직렬화 구조체
 │   │   ├── repository/         # SQL 쿼리 레이어
-│   │   ├── services/           # 비즈니스 로직 (eml_parser, ollama_client)
+│   │   ├── services/
+│   │   │   ├── ai/             # AiProvider 트레이트 + Ollama/Internal 구현
+│   │   │   └── eml_parser/
 │   │   ├── db/                 # DatabaseManager + MigrationRunner
 │   │   └── lib.rs              # AppState, invoke_handler 등록
 │   ├── migrations/
-│   │   └── V001_initial_schema.sql   # 전체 스키마 (include_str! 임베딩)
+│   │   ├── V001_initial_schema.sql
+│   │   ├── V002_add_ai_settings.sql
+│   │   └── V003_add_draft_reply.sql
 │   └── Cargo.toml
 │
-└── docs/
-    ├── architecture.md
-    ├── database.md
-    ├── roadmap.md
-    └── ui-flow.md
+└── test-data/                  # 통합 테스트 데이터
+    ├── eml/                    # 샘플 EML 108개
+    ├── projects.json
+    ├── schedules.json
+    └── expected-ai-results.json
 ```
 
 ---
@@ -131,8 +147,8 @@ proma/
 | `emails` | 임포트된 이메일 |
 | `email_attachments` | 첨부파일 메타데이터 |
 | `email_project_mappings` | 이메일 ↔ 프로젝트 다대다 (mapped_by: user / ai) |
-| `ai_results` | AI 분석 결과 (polymorphic source_type + source_id) |
-| `settings` | KV 설정 스토어 (Ollama URL/모델 등) |
+| `ai_results` | AI 분석 결과 (source_type + source_id, result_type: summary/classification/draft_reply) |
+| `settings` | KV 설정 스토어 (ai_provider, ollama_*, internal_*) |
 | `schema_migrations` | 마이그레이션 이력 |
 
 Migration SQL은 컴파일 타임에 바이너리에 임베딩되며, 앱 시작 시 자동 적용됩니다.
@@ -150,14 +166,9 @@ Migration SQL은 컴파일 타임에 바이너리에 임베딩되며, 앱 시작
 ### 설치 및 실행
 
 ```bash
-# 저장소 클론
-git clone https://github.com/<username>/proma.git
-cd proma
-
-# 의존성 설치
+git clone https://github.com/yeonh0/Proma.git
+cd Proma
 npm install
-
-# 개발 서버 + Tauri 앱 실행
 npm run tauri dev
 ```
 
@@ -165,22 +176,32 @@ npm run tauri dev
 
 ```bash
 npm run tauri build
+# 결과: src-tauri/target/release/bundle/nsis/*.exe
 ```
 
-빌드 결과물은 `src-tauri/target/release/bundle/` 에 생성됩니다.
+#### GitHub Actions로 자동 빌드 (폐쇄망 배포용)
+
+1. GitHub → **Actions** 탭 → **Windows 빌드** → **Run workflow**
+2. 빌드 완료 후 Artifacts에서 `proma-windows` 다운로드
+3. 압축 해제 후 설치파일 실행
 
 ---
 
-## AI 기능 사용 (Phase 4 이후)
+## AI 설정
 
-[Ollama](https://ollama.com/)를 설치하고 원하는 모델을 Pull합니다.
+앱 설정 화면에서 AI 제공자를 선택합니다.
 
+### Ollama (로컬)
 ```bash
-ollama pull llama3
-ollama serve    # 기본 포트: 11434
+ollama pull qwen3:8b   # 또는 원하는 모델
+ollama serve           # 기본 포트: 11434
 ```
+설정: `http://localhost:11434` / 모델명 입력
 
-앱 설정 화면에서 Ollama URL과 모델명을 지정하면 이메일 분석 기능이 활성화됩니다.
+### 내부망 AI 서비스
+- API URL: 내부망 엔드포인트
+- Workspace ID: 페이로드에 포함될 workspace_id
+- 요청 헤더: 브라우저 DevTools에서 복사한 헤더 붙여넣기 (`Key: Value` 형식)
 
 ---
 
@@ -188,6 +209,7 @@ ollama serve    # 기본 포트: 11434
 
 - **Migration**: `src-tauri/migrations/V{NNN}_*.sql` 추가 후 `db/migration.rs`의 `MIGRATIONS` 배열에 수동 등록
 - **IPC 커맨드**: `commands/` → `lib.rs`의 `invoke_handler![]`에 등록
+- **IPC 파라미터**: Rust `snake_case` → TypeScript `camelCase` 자동 변환 (Tauri v2)
 - **Frontend**: `features/{domain}/` 단위로 `types.ts` / `api.ts` / `index.ts` 구성
 
 ---
@@ -200,8 +222,8 @@ ollama serve    # 기본 포트: 11434
 | 1 | 프로젝트 · Task 관리 | ✅ 완료 |
 | 2 | 일정 관리 + 캘린더 뷰 | ✅ 완료 |
 | 3 | 이메일 임포트 및 관리 | ✅ 완료 |
-| 4 | AI 분석 (Ollama 연동) | 🔲 예정 |
-| 5 | 대시보드 및 통합 | 🔲 예정 |
+| 4 | AI 분석 (Ollama + 내부망 AI) | ✅ 완료 |
+| 5 | 대시보드 및 통합 | ✅ 완료 |
 | 6 | 안정화 및 마무리 | 🔲 예정 |
 
 ---

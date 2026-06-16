@@ -1,0 +1,19 @@
+From: 임재원 <jaewon.im@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 구매관리 시스템 테스트 환경 구성 완료
+Date: Mon, 14 May 2026 10:00:00 +0900
+Message-ID: <mail032@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+구매관리 시스템 QA 테스트 환경 구성이 완료되었습니다.
+
+환경 구성:
+- 테스트 서버: 2대 (WAS, DB 분리)
+- 테스트 계정: 50개 생성 완료
+- 샘플 데이터: 거래처 300개, 품목 1,200개
+
+테스트 시작: 5월 18일
+테스트 완료 목표: 6월 15일
+
+테스트 참여 인원은 QA 팀장에게 배정 확인 바랍니다.

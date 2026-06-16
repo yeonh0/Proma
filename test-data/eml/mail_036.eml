@@ -1,0 +1,19 @@
+From: 박지훈 <jihoon.park@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 전자결재 워크플로우 설계 검토
+Date: Sun, 06 Mar 2026 14:00:00 +0900
+Message-ID: <mail036@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+전자결재 시스템 워크플로우 설계안에 대한 검토 의견을 드립니다.
+
+현행 결재 프로세스 분석:
+- 평균 결재 소요 시간: 3.2일
+- 반려율: 12.4%
+- 종이 문서 연간 사용량: 48,000장
+
+전자결재 도입 후 목표:
+- 결재 소요 시간: 0.5일 이내
+- 반려율: 8% 이하
+- 종이 문서 80% 감소

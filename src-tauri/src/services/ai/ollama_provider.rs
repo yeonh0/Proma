@@ -1,5 +1,5 @@
-use reqwest::blocking::Client;
 use serde::{Deserialize, Serialize};
+use std::time::Duration;
 
 use super::provider::{AiError, AiProvider, LlmRequest, LlmResponse};
 
@@ -35,15 +35,19 @@ struct OllamaChatResponse {
 pub struct OllamaProvider {
     base_url: String,
     model: String,
-    client: Client,
+    agent: ureq::Agent,
 }
 
 impl OllamaProvider {
     pub fn new(base_url: &str, model: &str) -> Self {
+        let agent = ureq::AgentBuilder::new()
+            .timeout_read(Duration::from_secs(300))
+            .timeout_connect(Duration::from_secs(10))
+            .build();
         Self {
             base_url: base_url.trim_end_matches('/').to_string(),
             model: model.to_string(),
-            client: Client::new(),
+            agent,
         }
     }
 
@@ -59,14 +63,13 @@ impl OllamaProvider {
         };
 
         let response = self
-            .client
-            .post(format!("{}/api/chat", self.base_url))
-            .json(&body)
-            .send()
+            .agent
+            .post(&format!("{}/api/chat", self.base_url))
+            .send_json(&body)
             .map_err(|e| AiError::Http(e.to_string()))?;
 
         let chat_response: OllamaChatResponse =
-            response.json().map_err(|e| AiError::Parse(e.to_string()))?;
+            response.into_json().map_err(|e| AiError::Parse(e.to_string()))?;
 
         Ok(LlmResponse { content: chat_response.message.content })
     }

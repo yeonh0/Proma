@@ -1,0 +1,18 @@
+From: 신예린 <yerin.shin@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 고객관리 시스템 API 연동 테스트 결과
+Date: Thu, 17 Apr 2026 14:00:00 +0900
+Message-ID: <mail021@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+고객관리 시스템 외부 API 연동 테스트 결과를 보고드립니다.
+
+테스트 항목: 카카오 알림톡, SMS 발송, 이메일 발송
+
+결과:
+- 카카오 알림톡: 정상 (발송 성공률 99.8%)
+- SMS: 정상 (LGU+ 연동)
+- 이메일: SMTP 인증 오류 발생 → 수정 중
+
+이메일 발송 기능은 4월 25일까지 재테스트 예정입니다.

@@ -1,0 +1,24 @@
+From: 최유진 <yujin.choi@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 회의록: 전자결재 시스템 설계 검토 (3/25)
+Date: Fri, 25 Mar 2026 15:00:00 +0900
+Message-ID: <mail072@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+전자결재 시스템 설계 검토 회의록입니다.
+
+일시: 2026년 3월 25일(수) 14:00~16:00
+참석자: 윤하늘(PM), 장소희, 홍길동, 배수진
+
+검토 결과:
+- 결재 워크플로우 엔진: Camunda BPM 선정
+- 문서 저장: S3 + 메타데이터 DB
+- 전자서명 솔루션: 드림시큐리티 확정
+
+액션 아이템:
+- [장소희] API 설계서 4/3까지 완성
+- [홍길동] 전자서명 벤더 계약 4/7까지 완료
+- [배수진] DB 스키마 설계 4/1까지 초안 작성
+
+차기 회의: 4월 7일

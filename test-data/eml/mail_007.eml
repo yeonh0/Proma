@@ -1,0 +1,20 @@
+From: 오다은 <daeun.oh@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 인사관리 시스템 데이터 마이그레이션 계획
+Date: Tue, 15 Mar 2026 14:00:00 +0900
+Message-ID: <mail007@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+인사관리 시스템 전환에 따른 데이터 마이그레이션 계획을 공유드립니다.
+
+마이그레이션 대상:
+- 임직원 기본 정보 (약 2,400건)
+- 급여 이력 (2020년~현재)
+- 인사 발령 이력
+- 교육 이수 기록
+
+마이그레이션 일정: 4월 1일~7일
+검증 기간: 4월 8일~14일
+
+각 팀의 데이터 정제 협조를 부탁드립니다.

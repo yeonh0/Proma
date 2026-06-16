@@ -1,0 +1,19 @@
+From: 배수진 <sujin.bae@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 클라우드 마이그레이션 사전 조사 결과
+Date: Tue, 01 Apr 2026 11:00:00 +0900
+Message-ID: <mail014@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+클라우드 마이그레이션을 위한 현행 인프라 사전 조사 결과입니다.
+
+현행 서버 현황:
+- 온프레미스 서버: 47대
+- 가상화 서버: 23대
+- 연간 인프라 운영 비용: 약 4억 8천만원
+
+클라우드 전환 시 예상 절감액: 약 1억 5천만원/년
+전환 우선 대상: 개발/테스트 환경 → 웹 서비스 → 배치 시스템
+
+상세 분석 보고서는 4월 15일 제출 예정입니다.

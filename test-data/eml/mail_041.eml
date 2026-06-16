@@ -1,0 +1,17 @@
+From: 임재원 <jaewon.im@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 구매관리 공급망 리스크 관리 기능
+Date: Fri, 18 Mar 2026 11:00:00 +0900
+Message-ID: <mail041@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+구매관리 시스템에 공급망 리스크 관리 기능 추가를 제안드립니다.
+
+리스크 관리 기능:
+- 공급업체 재무 건전성 모니터링
+- 납기 지연 예측 알림
+- 대체 공급업체 정보 관리
+- 비상 조달 프로세스 지원
+
+이 기능은 2단계 개발 범위로 포함 요청드립니다.

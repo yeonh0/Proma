@@ -1,0 +1,18 @@
+From: 정수빈 <subin.jung@samsung.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 구매관리 시스템 전자세금계산서 연동
+Date: Fri, 18 Apr 2026 09:00:00 +0900
+Message-ID: <mail053@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+구매관리 시스템에 전자세금계산서 자동 연동 기능을 추가합니다.
+
+연동 범위:
+- 홈택스 전자세금계산서 수신
+- 매입 전표 자동 생성
+- ERP 회계 모듈 자동 연계
+
+연동 솔루션: 케이렉스 전자세금계산서 솔루션
+구축 일정: 5월~6월
+예상 비용: 1,800만원 (구축) + 연 300만원 (유지보수)

@@ -1,0 +1,22 @@
+From: 이서연 <seoyeon.lee@hyundai.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: MES Improvement Project - Technical Review Request
+Date: Sun, 13 Mar 2026 11:00:00 +0900
+Message-ID: <mail090@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Hi,
+
+I am writing to request a technical review of the MES improvement project architecture design.
+
+Key points for review:
+1. PLC communication protocol selection (OPC-UA vs Modbus)
+2. Data collection frequency requirements
+3. Real-time monitoring dashboard architecture
+4. Integration with existing ERP system
+
+Please share your feedback by March 20.
+
+Thanks,
+Seoyeon Lee

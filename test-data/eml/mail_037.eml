@@ -1,0 +1,17 @@
+From: 최유진 <yujin.choi@naver.com>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: 생산관리 시스템 생산 계획 모듈 설계
+Date: Wed, 09 Mar 2026 11:00:00 +0900
+Message-ID: <mail037@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+생산관리 시스템 생산 계획 모듈 설계서를 검토해 주시기 바랍니다.
+
+주요 기능:
+1. 주간/월간 생산 계획 수립
+2. 자재 소요량 계획(MRP) 연동
+3. 능력 소요 계획(CRP) 분석
+4. 생산 계획 변경 이력 관리
+
+설계 완료: 3월 20일 예정

@@ -1,0 +1,24 @@
+From: 박지훈 <jihoon.park@company.kr>
+To: 프로젝트팀 <project.team@company.kr>
+Subject: Cloud Migration - AWS Architecture Proposal
+Date: Thu, 03 Apr 2026 14:00:00 +0900
+Message-ID: <mail091@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Dear Stakeholders,
+
+Attached is our proposed AWS cloud architecture for the migration project.
+
+Highlights:
+- Multi-AZ deployment for high availability
+- Auto-scaling groups for web and application tiers
+- RDS Aurora for database with read replicas
+- CloudFront CDN for static assets
+- Estimated monthly cost: USD 15,000
+
+Please review and schedule a meeting to discuss.
+
+Best regards,
+Jihoon Park
+Cloud Architect
