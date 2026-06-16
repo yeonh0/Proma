@@ -42,15 +42,17 @@ impl InternalProvider {
         }
     }
 
-    /// "Key: Value" 형식과 Python 교대 줄(홀수=키, 짝수=값) 형식 모두 지원
+    /// "Key: Value" 형식과 Python 교대 줄(홀수=키, 짝수=값) 형식 모두 지원.
+    /// DevTools General 섹션 메타데이터(Request URL, Status Code 등)는 키에 공백이 있어
+    /// 유효한 HTTP 헤더가 아니므로 자동으로 제외한다.
     fn parse_headers(raw: &str) -> Vec<(String, String)> {
         let lines: Vec<&str> = raw.trim().lines().map(str::trim).filter(|l| !l.is_empty()).collect();
         if lines.is_empty() {
             return vec![];
         }
 
-        // 첫 줄에 ':' 가 있으면 "Key: Value" 형식으로 파싱
-        if lines[0].contains(':') {
+        let pairs: Vec<(String, String)> = if lines[0].contains(':') {
+            // "Key: Value" 형식
             lines
                 .iter()
                 .filter_map(|line| {
@@ -61,7 +63,7 @@ impl InternalProvider {
                 })
                 .collect()
         } else {
-            // Python raw_headers 교대 줄 형식 (홀수=키, 짝수=값)
+            // Python raw_headers 교대 줄 형식 (짝수=키, 홀수=값)
             lines
                 .chunks(2)
                 .filter_map(|chunk| {
@@ -72,7 +74,10 @@ impl InternalProvider {
                     }
                 })
                 .collect()
-        }
+        };
+
+        // 키에 공백이 있는 항목은 HTTP 헤더가 아닌 DevTools 메타데이터이므로 제외
+        pairs.into_iter().filter(|(key, _)| !key.contains(' ')).collect()
     }
 
     fn call(&self, req: LlmRequest) -> Result<LlmResponse, AiError> {
