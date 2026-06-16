@@ -11,7 +11,7 @@ const NAV_ITEMS = [
 export default function Sidebar() {
   return (
     <aside className="sidebar">
-      <div className="sidebar-logo">ClaudeProj</div>
+      <div className="sidebar-logo">Proma</div>
       <nav className="sidebar-nav">
         {NAV_ITEMS.map(({ to, label, end }) => (
           <NavLink
