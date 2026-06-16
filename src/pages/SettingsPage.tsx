@@ -1,12 +1,28 @@
 import { useEffect, useState } from 'react';
 import { settingsApi } from '../features/settings';
 import type { AiProvider } from '../features/settings';
+import { invokeCommand } from '../shared/lib/tauri';
 
 export default function SettingsPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+
+  const [seeding, setSeeding] = useState(false);
+
+  const handleSeedAutomotive = async () => {
+    if (!confirm('자동차 시나리오 프로젝트 5개와 태스크 25개를 생성합니다.\n기존 데이터는 삭제되지 않습니다. 계속하시겠습니까?')) return;
+    setSeeding(true);
+    try {
+      const result = await invokeCommand<{ projects: number; tasks: number }>('seed_automotive_data');
+      alert(`생성 완료: 프로젝트 ${result.projects}개, 태스크 ${result.tasks}개`);
+    } catch (e) {
+      alert(`오류: ${String(e)}`);
+    } finally {
+      setSeeding(false);
+    }
+  };
 
   const [aiProvider, setAiProvider] = useState<AiProvider>('ollama');
   const [ollamaBaseUrl, setOllamaBaseUrl] = useState('http://localhost:11434');
@@ -154,6 +170,17 @@ export default function SettingsPage() {
           </button>
         </div>
       </form>
+
+      <section className="settings-section" style={{ marginTop: '24px' }}>
+        <h3 className="settings-section-title">테스트 데이터</h3>
+        <p style={{ fontSize: '13px', color: '#666', marginBottom: '12px' }}>
+          자동차 회사 시나리오 프로젝트 5개 + 태스크 25개를 생성합니다.<br />
+          (아반떼 CN7 / 쏘나타 DN8 / 투싼 NX4 / 팰리세이드 LX2 / 아이오닉5 NE)
+        </p>
+        <button className="btn btn-primary" onClick={handleSeedAutomotive} disabled={seeding}>
+          {seeding ? '생성 중…' : '자동차 시나리오 데이터 불러오기'}
+        </button>
+      </section>
     </div>
   );
 }

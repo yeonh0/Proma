@@ -68,6 +68,7 @@ pub fn run() {
             commands::settings::settings_get_all,
             commands::ai::email_analyze,
             commands::ai::email_list_ai_results,
+            commands::seed::seed_automotive_data,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
