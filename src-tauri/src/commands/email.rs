@@ -82,6 +82,12 @@ pub fn email_delete(state: State<AppState>, id: i64) -> Result<bool, String> {
 }
 
 #[tauri::command]
+pub fn email_delete_all(state: State<AppState>) -> Result<usize, String> {
+    let db = state.db.lock().map_err(|e| e.to_string())?;
+    repo::delete_all(db.connection()).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
 pub fn email_link_project(state: State<AppState>, email_id: i64, project_id: i64) -> Result<EmailProjectMapping, String> {
     let db = state.db.lock().map_err(|e| e.to_string())?;
     repo::link_project(db.connection(), email_id, project_id).map_err(|e| e.to_string())

@@ -74,6 +74,11 @@ pub fn delete(conn: &Connection, id: i64) -> rusqlite::Result<bool> {
     Ok(n > 0)
 }
 
+pub fn delete_all(conn: &Connection) -> rusqlite::Result<usize> {
+    let n = conn.execute("DELETE FROM emails", [])?;
+    Ok(n)
+}
+
 pub fn create_attachment(
     conn: &Connection,
     email_id: i64,

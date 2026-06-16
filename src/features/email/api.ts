@@ -14,6 +14,9 @@ export const emailApi = {
   delete: (id: number) =>
     invokeCommand<boolean>('email_delete', { id }),
 
+  deleteAll: () =>
+    invokeCommand<number>('email_delete_all'),
+
   linkProject: (emailId: number, projectId: number) =>
     invokeCommand<EmailProjectMapping>('email_link_project', { emailId, projectId }),
 

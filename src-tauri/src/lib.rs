@@ -59,6 +59,7 @@ pub fn run() {
             commands::email::email_list,
             commands::email::email_get,
             commands::email::email_delete,
+            commands::email::email_delete_all,
             commands::email::email_link_project,
             commands::email::email_unlink_project,
             commands::email::email_list_project_ids,
