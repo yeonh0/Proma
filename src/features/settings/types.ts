@@ -5,7 +5,7 @@ export interface AppSettings {
   email_storage_path: string;
   ai_provider: string;
   internal_api_url: string;
-  internal_api_token: string;
+  internal_raw_headers: string;
   internal_workspace_id: string;
 }
 

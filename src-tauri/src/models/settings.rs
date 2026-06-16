@@ -8,6 +8,6 @@ pub struct AppSettings {
     pub email_storage_path: String,
     pub ai_provider: String,
     pub internal_api_url: String,
-    pub internal_api_token: String,
+    pub internal_raw_headers: String,
     pub internal_workspace_id: String,
 }

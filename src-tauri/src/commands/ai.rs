@@ -62,7 +62,7 @@ pub async fn email_analyze(
             &settings.ollama_base_url,
             &settings.ollama_model,
             &settings.internal_api_url,
-            &settings.internal_api_token,
+            &settings.internal_raw_headers,
             &settings.internal_workspace_id,
         );
 

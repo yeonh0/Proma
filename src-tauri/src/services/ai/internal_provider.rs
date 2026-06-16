@@ -23,22 +23,55 @@ struct LlmResult {
 
 pub struct InternalProvider {
     api_url: String,
-    token: String,
     workspace_id: String,
+    headers: Vec<(String, String)>,
     agent: ureq::Agent,
 }
 
 impl InternalProvider {
-    pub fn new(api_url: &str, token: &str, workspace_id: &str) -> Self {
+    pub fn new(api_url: &str, raw_headers: &str, workspace_id: &str) -> Self {
         let agent = ureq::AgentBuilder::new()
             .timeout_read(Duration::from_secs(300))
             .timeout_connect(Duration::from_secs(10))
             .build();
         Self {
             api_url: api_url.to_string(),
-            token: token.to_string(),
             workspace_id: workspace_id.to_string(),
+            headers: Self::parse_headers(raw_headers),
             agent,
+        }
+    }
+
+    /// "Key: Value" 형식과 Python 교대 줄(홀수=키, 짝수=값) 형식 모두 지원
+    fn parse_headers(raw: &str) -> Vec<(String, String)> {
+        let lines: Vec<&str> = raw.trim().lines().map(str::trim).filter(|l| !l.is_empty()).collect();
+        if lines.is_empty() {
+            return vec![];
+        }
+
+        // 첫 줄에 ':' 가 있으면 "Key: Value" 형식으로 파싱
+        if lines[0].contains(':') {
+            lines
+                .iter()
+                .filter_map(|line| {
+                    let idx = line.find(':')?;
+                    let key = line[..idx].trim().to_string();
+                    let value = line[idx + 1..].trim().to_string();
+                    if key.is_empty() { None } else { Some((key, value)) }
+                })
+                .collect()
+        } else {
+            // Python raw_headers 교대 줄 형식 (홀수=키, 짝수=값)
+            lines
+                .chunks(2)
+                .filter_map(|chunk| {
+                    if chunk.len() == 2 {
+                        Some((chunk[0].to_string(), chunk[1].to_string()))
+                    } else {
+                        None
+                    }
+                })
+                .collect()
         }
     }
 
@@ -52,11 +85,12 @@ impl InternalProvider {
             workspace_id: self.workspace_id.clone(),
         };
 
-        let response = self
-            .agent
-            .post(&self.api_url)
-            .set("Content-Type", "application/json")
-            .set("Authorization", &format!("Bearer {}", self.token))
+        let mut ureq_req = self.agent.post(&self.api_url);
+        for (key, value) in &self.headers {
+            ureq_req = ureq_req.set(key, value);
+        }
+
+        let response = ureq_req
             .send_json(&payload)
             .map_err(|e| AiError::Http(e.to_string()))?;
 

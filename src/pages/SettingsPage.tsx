@@ -12,7 +12,7 @@ export default function SettingsPage() {
   const [ollamaBaseUrl, setOllamaBaseUrl] = useState('http://localhost:11434');
   const [ollamaModel, setOllamaModel] = useState('llama3');
   const [internalApiUrl, setInternalApiUrl] = useState('');
-  const [internalApiToken, setInternalApiToken] = useState('');
+  const [internalRawHeaders, setInternalRawHeaders] = useState('');
   const [internalWorkspaceId, setInternalWorkspaceId] = useState('');
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function SettingsPage() {
         setOllamaBaseUrl(s.ollama_base_url);
         setOllamaModel(s.ollama_model);
         setInternalApiUrl(s.internal_api_url);
-        setInternalApiToken(s.internal_api_token);
+        setInternalRawHeaders(s.internal_raw_headers);
         setInternalWorkspaceId(s.internal_workspace_id);
       })
       .catch((e) => setError(String(e)))
@@ -41,7 +41,7 @@ export default function SettingsPage() {
         settingsApi.set('ollama_base_url', ollamaBaseUrl.trim()),
         settingsApi.set('ollama_model', ollamaModel.trim()),
         settingsApi.set('internal_api_url', internalApiUrl.trim()),
-        settingsApi.set('internal_api_token', internalApiToken.trim()),
+        settingsApi.set('internal_raw_headers', internalRawHeaders),
         settingsApi.set('internal_workspace_id', internalWorkspaceId.trim()),
       ]);
       setSuccess(true);
@@ -118,18 +118,7 @@ export default function SettingsPage() {
                   type="text"
                   value={internalApiUrl}
                   onChange={(e) => setInternalApiUrl(e.target.value)}
-                  placeholder="https://내부망주소/api/chat"
-                />
-              </label>
-              <label className="form-label">
-                인증 토큰
-                <input
-                  className="form-input"
-                  type="password"
-                  value={internalApiToken}
-                  onChange={(e) => setInternalApiToken(e.target.value)}
-                  placeholder="Bearer 토큰"
-                  autoComplete="off"
+                  placeholder="https://내부망주소/api/chat/search"
                 />
               </label>
               <label className="form-label">
@@ -139,7 +128,20 @@ export default function SettingsPage() {
                   type="text"
                   value={internalWorkspaceId}
                   onChange={(e) => setInternalWorkspaceId(e.target.value)}
-                  placeholder="workspace_id"
+                  placeholder="workspace_id 값"
+                />
+              </label>
+              <label className="form-label">
+                요청 헤더
+                <textarea
+                  className="form-input"
+                  rows={10}
+                  value={internalRawHeaders}
+                  onChange={(e) => setInternalRawHeaders(e.target.value)}
+                  placeholder={
+                    'Cookie: session=abc123\nContent-Type: application/json\n\n또는 Python raw_headers 형식:\nCookie\nsession=abc123'
+                  }
+                  style={{ fontFamily: 'monospace', fontSize: '12px', resize: 'vertical' }}
                 />
               </label>
             </>
