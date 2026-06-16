@@ -31,6 +31,8 @@ pub fn get_all(conn: &Connection) -> rusqlite::Result<AppSettings> {
         app_language:       get_or(conn, "app_language",       "ko")?,
         email_storage_path: get_or(conn, "email_storage_path", "")?,
         ai_provider:        get_or(conn, "ai_provider",        "ollama")?,
-        internal_api_url:   get_or(conn, "internal_api_url",   "http://localhost:8080/api/ai")?,
+        internal_api_url:       get_or(conn, "internal_api_url",       "http://localhost:8080/api/ai")?,
+        internal_api_token:     get_or(conn, "internal_api_token",     "")?,
+        internal_workspace_id:  get_or(conn, "internal_workspace_id",  "")?,
     })
 }

@@ -11,7 +11,9 @@ export default function SettingsPage() {
   const [aiProvider, setAiProvider] = useState<AiProvider>('ollama');
   const [ollamaBaseUrl, setOllamaBaseUrl] = useState('http://localhost:11434');
   const [ollamaModel, setOllamaModel] = useState('llama3');
-  const [internalApiUrl, setInternalApiUrl] = useState('http://localhost:8080/api/ai');
+  const [internalApiUrl, setInternalApiUrl] = useState('');
+  const [internalApiToken, setInternalApiToken] = useState('');
+  const [internalWorkspaceId, setInternalWorkspaceId] = useState('');
 
   useEffect(() => {
     settingsApi.getAll()
@@ -20,6 +22,8 @@ export default function SettingsPage() {
         setOllamaBaseUrl(s.ollama_base_url);
         setOllamaModel(s.ollama_model);
         setInternalApiUrl(s.internal_api_url);
+        setInternalApiToken(s.internal_api_token);
+        setInternalWorkspaceId(s.internal_workspace_id);
       })
       .catch((e) => setError(String(e)))
       .finally(() => setLoading(false));
@@ -37,6 +41,8 @@ export default function SettingsPage() {
         settingsApi.set('ollama_base_url', ollamaBaseUrl.trim()),
         settingsApi.set('ollama_model', ollamaModel.trim()),
         settingsApi.set('internal_api_url', internalApiUrl.trim()),
+        settingsApi.set('internal_api_token', internalApiToken.trim()),
+        settingsApi.set('internal_workspace_id', internalWorkspaceId.trim()),
       ]);
       setSuccess(true);
       setTimeout(() => setSuccess(false), 3000);
@@ -104,16 +110,39 @@ export default function SettingsPage() {
           )}
 
           {aiProvider === 'internal' && (
-            <label className="form-label">
-              내부 API URL
-              <input
-                className="form-input"
-                type="text"
-                value={internalApiUrl}
-                onChange={(e) => setInternalApiUrl(e.target.value)}
-                placeholder="http://localhost:8080/api/ai"
-              />
-            </label>
+            <>
+              <label className="form-label">
+                API URL
+                <input
+                  className="form-input"
+                  type="text"
+                  value={internalApiUrl}
+                  onChange={(e) => setInternalApiUrl(e.target.value)}
+                  placeholder="https://내부망주소/api/chat"
+                />
+              </label>
+              <label className="form-label">
+                인증 토큰
+                <input
+                  className="form-input"
+                  type="password"
+                  value={internalApiToken}
+                  onChange={(e) => setInternalApiToken(e.target.value)}
+                  placeholder="Bearer 토큰"
+                  autoComplete="off"
+                />
+              </label>
+              <label className="form-label">
+                Workspace ID
+                <input
+                  className="form-input"
+                  type="text"
+                  value={internalWorkspaceId}
+                  onChange={(e) => setInternalWorkspaceId(e.target.value)}
+                  placeholder="workspace_id"
+                />
+              </label>
+            </>
           )}
         </section>
 
